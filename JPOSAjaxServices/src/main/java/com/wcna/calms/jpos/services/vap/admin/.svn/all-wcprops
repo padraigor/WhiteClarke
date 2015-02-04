@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin
+END
+LoadPremiumService.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/LoadPremiumService.java
+END
+PlanVapAssociationLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/PlanVapAssociationLoadService.java
+END
+SavePlanVapAssociations.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/SavePlanVapAssociations.java
+END
+ValidateVapCommissionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/ValidateVapCommissionService.java
+END
+GetVapListService.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/GetVapListService.java
+END
+LoadPremiumDetailsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/LoadPremiumDetailsService.java
+END
+SaveVapService.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/SaveVapService.java
+END
+GetCommissionDetailsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/GetCommissionDetailsService.java
+END
+VapRoleStatusValidateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/VapRoleStatusValidateService.java
+END
+GetPlansListService.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/GetPlansListService.java
+END
+GetVapDetailService.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/GetVapDetailService.java
+END
+GetCommissionListService.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/GetCommissionListService.java
+END
+SavePremiumService.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vap/admin/SavePremiumService.java
+END

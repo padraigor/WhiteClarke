@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/test/java/com/wcna/calms/jpos/services/customer
+END
+CustomerRegistrationCodeValidationServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/test/java/com/wcna/calms/jpos/services/customer/CustomerRegistrationCodeValidationServiceTest.java
+END
+CustomerCPFValidationServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/test/java/com/wcna/calms/jpos/services/customer/CustomerCPFValidationServiceTest.java
+END

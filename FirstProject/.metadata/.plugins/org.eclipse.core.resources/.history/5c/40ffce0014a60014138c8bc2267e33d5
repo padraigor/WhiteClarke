@@ -1,0 +1,35 @@
+package org.porourke.javabrains.hibernate;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateTest {
+
+	public static void main(String[] args) {
+		UserDetails user = new UserDetails();
+		user.setUserId(2);
+		user.setUserName("Second name");
+		user.setAddress(new Address( "Made up Street", "SpringField", "TEXAS", "TEX123") );
+		user.setJoinedDate(new Date());
+		user.setDescrtiption("Description goes here");
+
+		SessionFactory sessionFactory =new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		session.beginTransaction();
+		session.save(user);
+		session.getTransaction().commit();
+		session.close();
+		
+		//NewSession
+		user = null;
+		session = sessionFactory.openSession();
+		session.beginTransaction();
+		user = (UserDetails) session.get(UserDetails.class, 1);
+		System.out.println("User Name retrieved is " + user.getUserName());
+	}
+
+}

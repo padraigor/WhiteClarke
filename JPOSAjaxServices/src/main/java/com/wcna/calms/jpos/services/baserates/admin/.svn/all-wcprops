@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/baserates/admin
+END
+SaveBaseRateAndVersionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/baserates/admin/SaveBaseRateAndVersionService.java
+END
+GetBaseRateVersionsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/baserates/admin/GetBaseRateVersionsService.java
+END
+GetBaseRateVersionDetailsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/baserates/admin/GetBaseRateVersionDetailsService.java
+END
+GetBaseRatesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/baserates/admin/GetBaseRatesService.java
+END

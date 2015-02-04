@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.porourke.springinaction.firstproject.ch11hibernate">
+	   <class name="Department" table="department">
+	    	 <id name="id" column="id">
+	    	 	 <generator class="native"/>
+	    	 </id>
+	    	 <property name="name" column="name"></property>
+	    </class>
+	   	<class name="Employee" table="employee">
+	    	 <id name="id" column="id">
+	    	 	 <generator class="native"/>
+	    	 </id>
+	    	 <property name="name" column="name"></property>
+	    	 <property name="department" column="department"></property>
+	    </class>
+	    
+</hibernate-mapping>
+	
+	
+
+    
+
+	
+

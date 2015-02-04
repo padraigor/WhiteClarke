@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/settlement
+END
+SettlementQuoteAcceptService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/settlement/SettlementQuoteAcceptService.java
+END
+SettlementQuoteLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/settlement/SettlementQuoteLoadService.java
+END
+SettlementQuoteCloseService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/settlement/SettlementQuoteCloseService.java
+END
+SettlementQuoteRetrieveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/settlement/SettlementQuoteRetrieveService.java
+END
+JPOSSettlementDocumentHandleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/settlement/JPOSSettlementDocumentHandleService.java
+END

@@ -1,0 +1,2719 @@
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd"
+
+          >
+	<!--bean id="JPOSDomainEntriesAppender" class="com.wcna.calms.util.SpringCollectionAppender" init-method="init">
+		<property name="collectionMerger" ref="CalmsDomainEntries"/>
+		<property name="listHolder">
+			<list>
+			<ref bean="JPOSDomainEntries"/>
+			</list>
+		</property>
+	</bean-->
+
+	<util:map id="JPOSDomainEntries">
+		<!-- sample to be removed
+		<entry key="com.wcg.application.workqueue.activity">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.workqueue.WorkqueueActivitySearchService"></property>
+				<property name="moduleCode" value="work_queue"></property>
+			</bean>
+		</entry>
+		-->
+
+				<entry key="com.wcna.calms.jpos.services.audit">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.audit.ProposalAuditService" />
+						<property name="moduleCode" value="audit_application"/>
+						<property name="checkDataAccess" value="true"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcna.calms.jpos.services.auditstatic">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.audit.ProposalScreenStaticService">
+						</property>
+						<property name="moduleCode" value="proposal_summary"/>
+						<property name="checkDataAccess" value="true"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.jpos.retrieve.plans">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.services.quote.GetAvailableFinancePlansService">
+						</property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.profile.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.profile.ProfileLoadService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.security.unproxy">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.security.UnproxyService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.profile.apply">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.profile.ProfileSaveService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.application.refresh.nav.buttons">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.navigation.GetAppButtonsService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.jpos.home.get.finance.breakdown">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.search.SearchFinanceBreakdownService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.home.search.applications">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.search.JPOSHomeSearchService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.quote.clear.plans.service">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteClearPlansService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.quote.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteLoadService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.quote.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSaveService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.quote.calculate">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCalculateService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="quickQuote"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.quote.get.capmonitor.value">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteGetCapMonitorValueService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.quote.vehicle.rent.a.car.upload">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetRentACarUploadService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.services.quote.vehicle.options.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetOptionsLoadService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.basic.advanced.search.setup">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.search.InitiateAdvancedSearchListsService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.basic.advanced.search">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.search.BasicAdvancedSearchService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.basic.advanced.search.dealer.name.change">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.search.DealerNameChangeService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.application.propose">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.app.ProposeLeadService"></property>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="DS_NewProposal"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.init.quotes">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.InitializeNewQuotesService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetLoadService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+						<property name="screenCode" value="quickQuoteAsset"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetSaveService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+						<property name="screenCode" value="quickQuoteAsset"/>
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.refresh">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetRefreshService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.variant">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetVariantChangeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.tax.including">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetTaxIncludeChangeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.cost.refresh">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCostRefreshService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.asset.partExchange.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetPartExchangeLoadService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.asset.partExchange.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetPartExchangeSaveService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="partExchangeDetailsPopup"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.plan.refresh.on.customer.change">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.RefreshPlansOnCustTypeChangeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.search.customer.summary">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.search.GetCustomerDetailsService"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.summary.proposal">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.summary.JPOSProposalSummaryService"></property>
+						<property name="moduleCode" value="proposal_summary"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.summary.proposal.docs">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.summary.JPOSProposalSummaryDocLoadService"></property>
+						<property name="moduleCode" value="proposal_summary"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.summary.proposal.Financedetail">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.summary.JPOSProposalFinanceDetailsVehicleService">
+						</property>
+					</bean>
+				</entry>
+				<!--
+					for the reset button, ability to trigger the call should only depend
+					on the module access being '2' - we should ignore the check data access
+					because the whole point is to allow this button when the proposal is in a readonly
+					status (i.e. submitted)
+				 -->
+				<entry key="com.wcna.calms.jpos.application.reset">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.app.ResetApplicationService"></property>
+						<property name="checkDataAccess" value="false"></property>
+						<property name="moduleCode" value="DS_AppReset"></property>
+						<property name="isWriteService" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.summary.get.app.status.sort.num">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.summary.LoadAppStatusSortNumService"></property>
+						<property name="moduleCode" value="proposal_summary"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.dealer.info.message">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.dealerinfo.GetDealerInfoMessage">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.service.navigation.loadMenu">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.navigation.LoadMenuService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.application.new">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.app.JPOSCreateNewProposalService"></property>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="moduleCode" value="DS_NewProposal"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.plans.refresh">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuotePlanRefreshService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.copy.asset.details">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCopyAssetDetailsService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.plan.change">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuotePlanChangeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.asset.totalPrice.change">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetTotalPriceChangeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.asset.ffo.calc.total">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetCalcFFOTotalService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="quickQuoteAssetFFO"/>
+
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.asset.ffo.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetSaveFFOService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.cust.type.change">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSChangeCustTypeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.select.tpdb.customer">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSelTPDBCustomerService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.taxpointdate.change">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteTaxPointDateChangeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.document.handle">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteDocumentHandleService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcna.calms.jpos.quote.document.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteDocumentLoadService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcna.calms.jpos.quote.gen.structured.profile">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.GenStructuredProfileService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.adjust.structured.profile">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.AdjustStructuredProfileService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.get.more.structured.payments">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.GetMoreStructuredPaymentsService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.quote.cost.input.change">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCostInputChangeService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="appPermissionClass" value="com.wcna.calms.service.quote.IQuoteDataVO"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.commercial.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSCommercialCustomerLoad"></property>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.partnership.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSPartnershipCustomerLoad"></property>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.guarantor.delete.service">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.customer.JPOSDeleteGuarantorService"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.jointapp.delete.service">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.customer.JPOSDeleteJointAppService"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.crasearch.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service"
+							ref="com.wcg.calms.service.customer.CRASearchLoad"></property>
+						<property name="moduleCode" value="main_applicant" />
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="AdHocCRA" />
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.cra.summary.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service"
+							ref="com.wcg.calms.service.customer.CraSummaryLoad"></property>
+						<property name="moduleCode" value="main_applicant" />
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.crasearch.search">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service"
+							ref="com.wcg.calms.service.customer.AdHocCraSearchSave"></property>
+						<property name="moduleCode" value="main_applicant" />
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="AdHocCRA" />
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.guarantor.commercial.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSCommercialGuarantorLoad"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.privateindividual.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSMainIndividualLoad"></property>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PrivateInidividualCustomer"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.privateindividual.copy.address">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.customer.JPOSCopyPrivateIndividualAddressService"></property>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PrivateInidividualCustomer"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.company.copy.address">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.customer.JPOSCopyCompanyAddressService"></property>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PrivateInidividualCustomer"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.soletrader.copy.address">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.customer.JPOSCopySoleTraderAddressService"></property>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="jposSoleTraderApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.privateindividual.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSPrivateIndividualSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PrivateInidividualCustomer"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.commercial.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSCommercialCustomerSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="CompanyCustomer"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.partnership.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSPartnershipCustomerSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="jposPartnershipApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.guarantor.commercial.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSCommercialGuarantorSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="CompanyGuarantor"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.guarantor.privateindividual.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSConsumerGuarantorSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="ConsumerGuarantor"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.guarantor.privateindividual.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSConsumerGuarantorLoad"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="ConsumerGuarantor"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.company.jointapplicant.privateindividual.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.company.JPOSIndividualJointApplicantLoad"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="CompanyCoApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.privateindividual.jointapplicant.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.company.JPOSPIJointApplicantLoad"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PrivateIndividualJointApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.company.jointapplicant.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.company.JPOSCommercialJointApplicantLoad"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="CoApplicantCompanyType"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.company.privateindividual.effectiveOwner.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.company.JPOSIndividualEffectiveOwnerLoad"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="EffectiveOwner"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.company.privateindividual.effectiveOwner.copyDirector">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.company.JPOSIndividualEffectiveOwnerCopyDirector"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="EffectiveOwner"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.partnership.jointapplicant.privateindividual.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.partnership.JPOSIndividualJointApplicantLoad"></property>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PartnerCoapplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jointapplicant.privateindividual.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSIndividualJointApplicantSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="CompanyCoApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.privateindividual.jointapplicant.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSPIJointApplicantSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PrivateIndividualJointApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.company.jointapplicant.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSCompanyJointApplicantSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="CoApplicantCompanyType"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.company.privateindividual.effectiveOwner.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSIndividualEffectiveOwnerSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="EffectiveOwner"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.partnership.jointapplicant.privateindividual.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.partnership.JPOSIndividualJointApplicantSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="PartnerCoapplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.company.jointapplicant.privateindividual.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.company.JPOSIndividualJointApplicantSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="co_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="CompanyCoApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.rulegroup.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSRuleGroupListLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_rule"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.rulegroup.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSRuleGroupDetailsLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_rule"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.rulegroup.details.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSRuleGroupDetailsSaveService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminRuleGroups"/>
+						<property name="moduleCode" value="jpos_admin_rule"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.customer.soletrader.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSSoleTraderLoad"></property>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.customer.soletrader.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.service.customer.JPOSSoleTraderSave"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="main_applicant"/>
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="jposSoleTraderApplicant"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.cpigroup.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSCPIGroupListLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_cpigroup"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.cpigroup.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSCPIGroupDetailsLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_cpigroup"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.cpigroup.details.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSCPIGroupDetailsSaveService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminCPIGroups"/>
+						<property name="moduleCode" value="jpos_admin_cpigroup"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calmsportal.jposadmin.plan.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSPlanListLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_plan"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.plan.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSPlanDetailsLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_plan"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.plan.details.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSPlanDetailsSaveService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminPlans"/>
+						<property name="moduleCode" value="jpos_admin_plan"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.plan.rv.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.residualvalue.ResidualValueLoadService"></property>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="jpos_admin_plan"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.plan.rv.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.residualvalue.ResidualValueSaveService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="jpos_admin_plan"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.plan.tieredplan.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.tieredplan.TieredPlanSaveService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="jpos_admin_plan"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calmsportal.jposadmin.plan.tieredplan.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.tieredplan.TieredPlanLoadService"></property>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="jpos_admin_plan"/>
+					</bean>
+				</entry>
+
+
+				<entry key="com.wcg.calmsportal.jposadmin.package.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSPackageListLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_package"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.package.version.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSPackageVersionListLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_package"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.package.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSPackageDetailsLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_package"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.package.baserate.sum.calculate">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.GetBaseRateSumService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="jpos_admin_package"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.vehicledetails.popup.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.asset.JPOSVehicleDetailsLoadService"></property>
+						<property name="moduleCode" value="vin_registration_info"/>
+						<property name="checkDataAccess" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.asset.vehicledetails.popup.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.asset.JPOSVehicleDetailsSaveService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="vin_registration_info"/>
+						<property name="screenCode" value="vehicleDetailsPopup"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.package.details.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSPackageDetailsSaveService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminCommissionPackages"/>
+						<property name="moduleCode" value="jpos_admin_package"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.dealerproduct.dealer.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSDealerProductDealerListLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_dealerproduct"/>
+						<property name="screenCode" value="jposAdminDealerProducts"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.disbursementsummary.dealer.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.disbursement.JPOSDealerDisbursementSummaryDealerListLoadService"></property>
+						<property name="moduleCode" value="DS_DisbursementSummary"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.disbursementsummary.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.disbursement.JPOSDealerDisbursementSummaryLoadService"></property>
+						<property name="moduleCode" value="DS_DisbursementSummary"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.dealerproduct.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_dealerproduct"/>
+						<property name="screenCode" value="jposAdminDealerProducts"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.dealerproduct.product.summary.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.dealerproduct.FinancialProductSummaryLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_dealerproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.dealerproduct.details.delete">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsDeleteService"></property>
+						<property name="moduleCode" value="jpos_admin_dealerproduct"/>
+						<property name="screenCode" value="jposAdminDealerProducts"/>
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.dealerproduct.details.add">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsAddService"></property>
+						<property name="moduleCode" value="jpos_admin_dealerproduct"/>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminDealerProducts"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.groupproduct.group.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSGroupProductGroupListLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_groupproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.groupproduct.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_groupproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.groupproduct.details.delete">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsDeleteService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="jpos_admin_groupproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.groupproduct.details.add">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsAddService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminGroupProducts"/>
+						<property name="moduleCode" value="jpos_admin_groupproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.brandproduct.brand.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSBrandProductBrandListLoadService"></property>
+						<property name="screenCode" value="jposAdminBrandProducts"/>
+						<property name="moduleCode" value="jpos_admin_brandproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.brandproduct.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsLoadService"></property>
+						<property name="screenCode" value="jposAdminBrandProducts"/>
+						<property name="moduleCode" value="jpos_admin_brandproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.brandproduct.details.delete">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsDeleteService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminBrandProducts"/>
+						<property name="moduleCode" value="jpos_admin_brandproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.brandproduct.details.add">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsAddService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="jposAdminBrandProducts"/>
+						<property name="moduleCode" value="jpos_admin_brandproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.productsheet.group.list.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSProductSheetLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_sheet"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.productsheet.group.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSProductSheetGroupLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_sheet"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.productsheet.validDates.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSProductSheetValidDatesLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_sheet"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.document.quotedetail.print">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.document.JPOSQuoteDetailDocumentLoadService"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.productsheet.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSProductSheetSaveService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="jpos_admin_sheet"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.productsheet.delete">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.admin.JPOSProductSheetDeleteService"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="jpos_admin_sheet"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.submit.proposal">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.submit.SubmitProposalService"></property>
+						<property name="isWriteService" value="true"/>
+						<!--<property name="moduleCode" value=""/>-->
+						<property name="checkDataAccess" value="true"></property>
+						<property name="screenCode" value="SubmitProposalDetailsScreen"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.cae.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.cae.LoadCaeListService"></property>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="true"></property>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.get.vaps">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.GetVapListService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.save.vap">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.SaveVapService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.save.commission">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.ValidateVapCommissionService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+						<!-- this service will save and validate -->
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.get.vap.details">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.GetVapDetailService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.save.premium">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.SavePremiumService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.load.premium">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.LoadPremiumService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.load.premium.details">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.LoadPremiumDetailsService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.get.commissions">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.GetCommissionListService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.get.commission.details">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.GetCommissionDetailsService"></property>
+						<property name="moduleCode" value="jpos_admin_vap_builder"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.get.plans.for.association">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.GetPlansListService"></property>
+						<property name="moduleCode" value="jpos_admin_plan_vap_association"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.get.plan.vaps">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.PlanVapAssociationLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_plan_vap_association"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.plan.vap.validate.role.status">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.VapRoleStatusValidateService"></property>
+						<property name="moduleCode" value="jpos_admin_plan_vap_association"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.plan.vap.save.associations">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vap.admin.SavePlanVapAssociations"></property>
+						<property name="moduleCode" value="jpos_admin_plan_vap_association"/>
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.dealerProduct.vap.save.associations">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.dealerproduct.SaveDealerProductVapAssociations"></property>
+						<property name="isWriteService" value="true"/>
+						<property name="moduleCode" value="jpos_admin_dealerproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.vap.get.dealerProduct.vaps">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.dealerproduct.DealerProductVapAssociationLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_dealerproduct"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.base.rate.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.baserates.admin.SaveBaseRateAndVersionService"></property>
+						<property name="moduleCode" value="jpos_admin_base_rates"/>
+						<property name="isWriteService" value="true"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.base.rate.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.baserates.admin.GetBaseRatesService"></property>
+						<property name="moduleCode" value="jpos_admin_base_rates"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.base.rate.versions.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.baserates.admin.GetBaseRateVersionsService"></property>
+						<property name="moduleCode" value="jpos_admin_base_rates"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.base.rate.versions.detail.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.baserates.admin.GetBaseRateVersionDetailsService"></property>
+						<property name="moduleCode" value="jpos_admin_base_rates"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.usura.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.usura.admin.UsuraAdminLoadService"></property>
+						<property name="moduleCode" value="jpos_admin_usura"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.usura.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.usura.admin.UsuraAdminSaveService"></property>
+						<property name="moduleCode" value="jpos_admin_usura"/>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="JPOSAdminUsura"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calmsportal.jposadmin.usura.version.details.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.usura.admin.UsuraAdminGetVersionDetailsService"></property>
+						<property name="moduleCode" value="jpos_admin_usura"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.creditline.creditlinedetails.popup.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.creditline.JPOSCreditLineDetailsLoadService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.creditline.creditlinedetails.popup.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.creditline.JPOSCreditLineDetailsSaveService">
+						</property>
+						<property name="isWriteService" value="true"/>
+						<property name="screenCode" value="JPOSCreditLineDetailsScreen"/>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.creditline.creditlinedetails.list">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.creditline.JPOSCreditLineDetailsListService">
+						</property>
+					</bean>
+				</entry>
+				<entry key="com.wcna.calms.jpos.creditlines.delete">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.creditline.JPOSCreditLineDeleteService">
+						</property>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.services.vehicle.eligibility.upload">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityUploadService"/>
+						<property name="isWriteService" value="true"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="jpos_admin_veh_eligibility"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.services.vehicle.eligibility.load.groups">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityLoadService"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="jpos_admin_veh_eligibility"/>
+					</bean>
+				</entry>
+				<entry key="com.wcg.calms.jpos.services.vehicle.eligibility.load.group.details">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityGetDetailService"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="jpos_admin_veh_eligibility"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.services.settlement.quote.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.settlement.SettlementQuoteLoadService"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="online_settlement"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcna.calms.jpos.services.settlement.document.handle">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.settlement.JPOSSettlementDocumentHandleService"/>
+						<property name="moduleCode" value="online_settlement"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.services.settlement.quote.retrieve">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.settlement.SettlementQuoteRetrieveService"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="online_settlement"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.services.settlement.quote.close">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.settlement.SettlementQuoteCloseService"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="online_settlement"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.services.settlement.quote.accept">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.settlement.SettlementQuoteAcceptService"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="online_settlement"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.user.search">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.securityadmin.UserSearch"/>
+						<property name="isWriteService" value="false"/>
+						<property name="checkDataAccess" value="false"/>
+						<property name="moduleCode" value="DS_User_Maintenance"/>
+						<property name="payloadClass" value="com.wcg.calms.service.dealer.UserSearchCriteria"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcg.calms.jpos.user.delete">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.jpos.services.securityadmin.UserDelete"/>
+						<property name="isWriteService" value="true"/>
+						<property name="checkDataAccess" value="true"/>
+						<property name="moduleCode" value="DS_User_Maintenance"/>
+						<property name="payloadClass" value="com.wcg.calms.service.dealer.UserReference"/>
+					</bean>
+				</entry>
+
+		<!-- BPM save customer screens - begin -->
+		<entry key="com.wcg.calms.jpos.customer.privateindividual.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.customer.JPOSPrivateIndividualSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="main_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmPrivateInidividualCustomer"/>
+			</bean>
+		</entry>
+
+		<entry key="com.wcg.calms.jpos.customer.soletrader.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.customer.JPOSSoleTraderSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="main_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmjposSoleTraderApplicant"/>
+			</bean>
+		</entry>
+
+		<entry key="com.wcg.calms.jpos.customer.commercial.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.customer.JPOSCommercialCustomerSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="main_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmCompanyCustomer"/>
+			</bean>
+		</entry>
+
+		<entry key="com.wcg.calms.jpos.customer.partnership.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.customer.JPOSPartnershipCustomerSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="main_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmjposPartnershipApplicant"/>
+			</bean>
+		</entry>
+
+		<entry key="com.wcg.calms.company.jointapplicant.privateindividual.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.company.JPOSIndividualJointApplicantSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="co_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmCompanyCoApplicant"/>
+			</bean>
+		</entry>
+		<entry key="com.wcg.calms.jointapplicant.privateindividual.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.customer.JPOSIndividualJointApplicantSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="co_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmCompanyCoApplicant"/>
+			</bean>
+		</entry>
+		<entry key="com.wcg.calms.partnership.jointapplicant.privateindividual.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.partnership.JPOSIndividualJointApplicantSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="co_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmCompanyCoApplicant"/>
+			</bean>
+		</entry>
+
+		<entry key="com.wcg.calms.jpos.guarantor.privateindividual.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.customer.JPOSConsumerGuarantorSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="co_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmConsumerGuarantor"/>
+			</bean>
+		</entry>
+
+		<entry key="com.wcg.calms.jpos.guarantor.commercial.save.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcg.calms.service.bpm.customer.JPOSCommercialGuarantorSave"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="moduleCode" value="co_applicant"/>
+				<property name="checkDataAccess" value="true"></property>
+				<property name="screenCode" value="BpmCompanyGuarantor"/>
+			</bean>
+		</entry>
+
+		<entry key="com.wcg.calms.jpos.customer.find.load.bpm">
+			<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+				<property name="service" ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCustomerDetailLoadService"></property>
+				<property name="isWriteService" value="true"/>
+				<property name="checkDataAccess" value="true"></property>
+			</bean>
+		</entry>
+		<!-- BPM save customer screens - end -->
+
+		<!--capupdate screen start-->
+
+		<entry key="com.wcna.calms.jpos.asset.capupdate.popup.load">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsLoadService"></property>
+						<property name="moduleCode" value="cap_update_info"/>
+						<property name="checkDataAccess" value="true"/>
+					</bean>
+				</entry>
+
+				<entry key="com.wcna.calms.jpos.asset.capupdate.popup.save">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsSaveService"></property>
+						<property name="checkDataAccess" value="true"/>
+						<property name="isWriteService" value="true"/>
+						<!--<property name="moduleCode" value="cap_update_info"/>-->
+						<property name="screenCode" value="CapUpdate"/>
+					</bean>
+				</entry>
+
+
+				<entry key="com.wcna.calms.jpos.asset.capupdate.popup.lookup">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsLookupService"></property>
+						<!--<property name="moduleCode" value="cap_update_info"/>-->
+							<property name="isWriteService" value="true"/>
+						<property name="checkDataAccess" value="true"/>
+						<property name="screenCode" value="CapUpdate"/>
+					</bean>
+				</entry>
+
+
+
+		<!--capupdate screen end-->
+		<!-- Simulation -->
+		<entry key="com.wcg.jpos.application.simulation.execute">
+					<bean class="com.wcg.product.calms.security.SecuredServiceDescriptor">
+						<property name="service" ref="com.wcg.calms.jpos.services.simulation.SimulationSaveService"></property>
+						<property name="moduleCode" value="simulation"/>
+						<property name="isWriteService" value="true"/>
+						<property name="checkDataAccess" value="false"></property>
+						<property name="screenCode" value="Simulation"/>
+					</bean>
+				</entry>
+
+	</util:map>
+
+
+	<util:map id="JPOSBeanMap">
+		<!-- sample to be removed
+		<entry key="com.wcna.calms.service.search.ISearchListForm" value="com.wcna.calms.web.app.SearchListForm"/>
+		-->
+		<entry key="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteAssetForm" value="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetForm"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteInputForm" value="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteInputForm"/>
+		<entry key="com.wcna.calms.jpos.services.search.IAdvancedSearchListForm" value="com.wcna.calms.jpos.services.search.AdvancedSearchListForm"/>
+
+		<entry key="com.wcna.calms.jpos.services.admin.IJPOSBusinessRule" value="com.wcna.calms.jpos.services.admin.JPOSBusinessRule"/>
+		<entry key="com.wcna.calms.jpos.services.admin.IJPOSCPI" value="com.wcna.calms.jpos.services.admin.JPOSCPI"/>
+		<entry key="com.wcna.calms.jpos.services.admin.IJPOSPlan" value="com.wcna.calms.jpos.services.admin.JPOSPlan"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IJPOSCalcResultsBean" value="com.wcna.calms.jpos.services.quote.JPOSCalcResultsBean"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteCustomerForm" value="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCustomerForm"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IVehicleFFOBean" value="com.wcna.calms.jpos.services.quote.VehicleFFOBean"/>
+		<entry key="com.wcna.calms.jpos.services.admin.IJPOSCommissionPackage" value="com.wcna.calms.jpos.services.admin.JPOSCommissionPackage"/>
+		<entry key="com.wcna.calms.jpos.services.admin.IJPOSProductSettingVO" value="com.wcna.calms.jpos.services.admin.JPOSProductSettingVO"/>
+		<entry key="com.wcna.calms.jpos.services.admin.IJPOSRangeRateVO" value="com.wcna.calms.jpos.services.admin.JPOSRangeRateVO"/>
+		<entry key="com.wcna.calms.jpos.services.vap.admin.IVapCommissionBean" value="com.wcna.calms.jpos.services.vap.admin.VapCommissionBean"/>
+		<entry key="com.wcna.calms.jpos.services.vap.admin.IVapBean" value="com.wcna.calms.jpos.services.vap.admin.VapBean"/>
+		<entry key="com.wcna.calms.jpos.services.vap.admin.IVapValueBean" value="com.wcna.calms.jpos.services.vap.admin.VapValueBean"/>
+		<entry key="com.wcna.calms.jpos.services.vap.admin.IVapValueVersionBean" value="com.wcna.calms.jpos.services.vap.admin.VapValueVersionBean"/>
+		<entry key="com.wcna.calms.jpos.services.vap.admin.IPlanVapAssociationBean" value="com.wcna.calms.jpos.services.vap.admin.PlanVapAssociationBean"/>
+		<entry key="com.wcna.calms.jpos.services.vap.admin.IVapRoleStatusBean" value="com.wcna.calms.jpos.services.vap.admin.VapRoleStatusBean"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IVapItemRequestBean" value="com.wcna.calms.jpos.services.quote.VapItemRequestBean"/>
+		<entry key="com.wcna.calms.jpos.services.baserates.admin.IBaseRateBean" value="com.wcna.calms.jpos.services.baserates.admin.BaseRateBean"/>
+		<entry key="com.wcna.calms.jpos.services.baserates.admin.IBaseRateVersionBean" value="com.wcna.calms.jpos.services.baserates.admin.BaseRateVersionBean"/>
+		<entry key="com.wcna.calms.jpos.services.usura.admin.IUsuraVersionBean" value="com.wcna.calms.jpos.services.usura.admin.UsuraVersionBean"/>
+		<entry key="com.wcna.calms.jpos.services.usura.admin.IUsuraLimitBean" value="com.wcna.calms.jpos.services.usura.admin.UsuraLimitBean"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IVapItem" value="com.wcna.calms.jpos.services.quote.VapItem"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IPaymentSchedule" value="com.wcna.calms.jpos.services.quote.PaymentSchedule"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IRentACarBean" value="com.wcna.calms.jpos.services.quote.RentACarBean"/>
+		<entry key="com.wcna.calms.jpos.services.quote.IJPOSCommissionBean" value="com.wcna.calms.jpos.services.quote.JPOSCommissionBean"/>
+		<entry key="com.wcna.calms.jpos.services.vap.admin.IVapKey" value="com.wcna.calms.jpos.services.vap.admin.VapKey"/>
+		<entry key="com.wcna.calms.jpos.services.dealerproduct.IDealerProductVapAssociationBean" value="com.wcna.calms.jpos.services.dealerproduct.DealerProductVapAssociationBean"/>
+		<entry key="com.wcna.calms.jpos.services.dealerproduct.IDealerProductVapRoleStatusBean" value="com.wcna.calms.jpos.services.dealerproduct.DealerProductVapRoleStatusBean"/>
+		<entry key="com.wcna.calms.jpos.services.dealerproduct.IDealerProductVapCustTypeBean" value="com.wcna.calms.jpos.services.dealerproduct.DealerProductVapCustTypeBean"/>
+		<entry key="com.wcna.calms.jpos.services.dealerproduct.IFinancialProductSummaryBean" value="com.wcna.calms.jpos.services.dealerproduct.FinancialProductSummaryBean"/>
+	</util:map>
+
+
+	<util:map id="GenusAuthorizationList">
+		<entry key="com.wcna.calms.service.quote.IQuoteDataVO">
+			<bean class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAuthorizationService">
+				<property name="moduleQuoteLead" value="DS_NewQuote"/>
+				<property name="moduleQuoteProposal" value="DS_ProposalQuote"/>
+			</bean>
+		</entry>
+	</util:map>
+
+	<!-- sample to be removed
+	<bean id="com.wcg.calms.service.workqueue.WorkqueueActivitySearchService" class="com.wcg.calms.service.workqueue.WorkqueueActivitySearchService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.workqueue.IWorkqueueService"/>
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+		<constructor-arg ref="com.wcna.calms.service.search.ISearchListService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+	</bean>
+	-->
+	<bean id="com.wcg.calms.services.quote.GetAvailableFinancePlansService" class="com.wcna.calms.jpos.services.quote.GetAvailableFinancePlansService" />
+
+	<bean id="com.wcna.calms.jpos.services.profile.ProfileLoadService" class="com.wcna.calms.jpos.services.profile.ProfileLoadService">
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.security.UnproxyService" class="com.wcna.calms.jpos.services.security.UnproxyService">
+		<constructor-arg ref="com.wcna.calms.service.security.IDAGService" />
+		<constructor-arg ref="com.wcna.calms.service.security.IRoleService" />
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.profile.ProfileSaveService" class="com.wcna.calms.jpos.services.profile.ProfileSaveService">
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.navigation.GetAppButtonsService" class="com.wcna.calms.jpos.services.navigation.GetAppButtonsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppButtonService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppDisplayService"/>
+		<constructor-arg ref="com.wcna.calms.service.notes.IProposalNotesService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.SearchFinanceBreakdownService" class="com.wcna.calms.jpos.services.search.SearchFinanceBreakdownService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.JPOSHomeSearchService" class="com.wcna.calms.jpos.services.search.JPOSHomeSearchService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.search.BasicAdvancedSearchService"/>
+		<constructor-arg><ref bean = "com.wcna.calms.service.application.IApplicationService"/></constructor-arg>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil" class="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSimulationCalcService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSimulationCalcService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteLoadService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCalculateService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCalculateService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.calms.service.translation.ITranslationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.audit.ProposalAuditService" class="com.wcna.calms.jpos.services.audit.ProposalAuditService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="formatService" ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.audit.ProposalScreenStaticService" class="com.wcna.calms.jpos.services.audit.ProposalScreenStaticService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSaveService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteCustomerPreSaveValidatorService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.BasicAdvancedSearchService" class="com.wcna.calms.jpos.services.search.BasicAdvancedSearchService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.search.IAdvancedSearchService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.InitiateAdvancedSearchListsService" class="com.wcna.calms.jpos.services.search.InitiateAdvancedSearchListsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.search.IAdvancedSearchService"/>
+		<constructor-arg ref="com.wcna.calms.service.businesspartner.IBusinessPartnerService"/>
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.DealerNameChangeService" class="com.wcna.calms.jpos.services.search.DealerNameChangeService">
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.IAdvancedSearchService" class="com.wcna.calms.jpos.services.search.AdvancedSearchService">
+		<constructor-arg><ref bean = "com.wcna.calms.service.application.IApplicationAddressService"/></constructor-arg>
+		<constructor-arg><ref bean = "com.wcna.calms.service.application.IApplicationService"/></constructor-arg>
+		<constructor-arg><ref bean = "com.wcna.calms.service.screen.IScreenFlowService"/></constructor-arg>
+		<constructor-arg><ref bean = "com.wcna.calms.service.search.ISearchListService"/></constructor-arg>
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+		<constructor-arg ref="com.wcna.calms.service.entity.EntityAccessService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.InitializeNewQuotesService" class="com.wcna.calms.jpos.services.quote.InitializeNewQuotesService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteClearPlansService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteClearPlansService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteLoadService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetSaveService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IVehiclePreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetLoadService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetRefreshService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetRefreshService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetVariantChangeService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetVariantChangeService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+<!--		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVatService"/>	-->
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.IModelService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteAssetCalculationService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetTaxIncludeChangeService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetTaxIncludeChangeService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+<!--		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVatService"/>		-->
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteAssetCalculationService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCostRefreshService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCostRefreshService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+<!--		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVatService"/>		-->
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteAssetCalculationService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCopyAssetDetailsService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCopyAssetDetailsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.RefreshPlansOnCustTypeChangeService" class="com.wcna.calms.jpos.services.quote.RefreshPlansOnCustTypeChangeService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuotePlanRefreshService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetPartExchangeLoadService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetPartExchangeLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetPartExchangeSaveService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetPartExchangeSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetCalcFFOTotalService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetCalcFFOTotalService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetTotalPriceChangeService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetTotalPriceChangeService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetSaveFFOService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetSaveFFOService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSAssetService" class="com.wcna.calms.jpos.services.quote.JPOSAssetService">
+		<constructor-arg ref="com.wcna.calms.service.asset.ICatalogNodeService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.ICatalogRegPlateService"/>
+	</bean>
+
+	<bean id="com.wcg.calms.service.customer.CRASearchLoad" class="com.wcna.calms.jpos.services.cra.CRASearchLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService"/>
+		<property name="screenCode" value="AdHocCRA" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.CraSummaryLoad" class="com.wcna.calms.jpos.services.cra.CraSummaryLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.calms.crareport.service.ICraSearchService"/>
+		<constructor-arg ref="projectProperties"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.AdHocCraSearchSave" class="com.wcna.calms.jpos.services.cra.AdHocCraSearchSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.crareport.service.ICraSearchService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.JPosFormProvider"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.SessionMessageStore"/>
+	</bean>
+	<bean id="com.wcg.calms.jpos.services.simulation.SimulationSaveService" class="com.wcg.calms.jpos.services.simulation.SimulationSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcg.calms.jpos.services.simulation.ISimulationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSimulationCalcService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+	<bean id="com.wcg.calms.jpos.services.simulation.ISimulationService" class="com.wcg.calms.jpos.services.simulation.SimulationService" >
+		<constructor-arg ref="workflowServiceClient" />
+		<constructor-arg ref="com.wcna.calms.service.quote.IAssetService" />
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.JPosFormProvider" class="com.wcna.calms.jpos.services.JPosFormProvider"/>
+	<bean id="com.wcna.calms.jpos.services.SessionMessageStore" class="com.wcna.calms.jpos.services.SessionMessageStore"/>
+
+	<bean id="com.wcna.calms.crareport.service.ICraSearchService" class="com.wcna.calms.crareport.service.CraSearchService">
+		<constructor-arg ref="workflowServiceClient" />
+		<constructor-arg ref="com.wcna.calms.crareport.service.AdhocCraSearchDataRepository" />
+	</bean>
+	<bean id="com.wcna.calms.crareport.service.AdhocCraSearchDataRepository" class="com.wcna.calms.crareport.service.AdhocCraSearchDataRepository">
+	</bean>
+
+	<!-- commented out because the implementing client should specify this bean -->
+<!--	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService">-->
+<!--		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteService"/>-->
+<!--		<constructor-arg ref="calcHelper"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.finance.IFinCustTypeService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.facility.IFacilityService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVapService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>	-->
+<!--		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.asset.ICatalogRegPlateService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVatService"/>		-->
+<!--		<constructor-arg ref="com.wcna.calms.service.businesspartner.IBusinessPartnerService"/>	-->
+<!--		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.asset.ICatalogNodeService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.translation.ITranslationService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.component.IThirdPartyLookupService"/>-->
+<!--		<constructor-arg ref="com.wcna.calms.fiatpt.service.thirdparty.IThirdPartyApplicationService"/>-->
+<!--			<constructor-arg ref="com.wcna.calms.component.sensitivefield.ISensitiveComponent"/>-->
+<!--			<property name="screenCode"><value>quickQuote</value></property>-->
+<!--			<property name="deploymentId"><value>${spring.com.wcg.jpos.quote.justj.deployment.id}</value></property>-->
+<!--			<property name="commissionTaxRate"><value>${spring.com.wcg.jpos.quote.commission.tax.rate}</value></property>-->
+<!--	</bean>-->
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService" class="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService">
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuoteService" class="com.wcna.calms.jpos.services.quote.JPOSQuoteService">
+		<constructor-arg ref="calcEngine"/>
+		<constructor-arg ref="brHelper"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.ICatalogNodeService"/>
+		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteTaxService"/>
+		<constructor-arg ref="com.wcna.calms.service.finance.IFinCustomerGroupService"/>
+		<constructor-arg ref="com.wcna.calms.service.finance.IFinAssetGroupService"/>
+		<constructor-arg ref="com.wcna.calms.service.finance.IFinCustTypeService"/>
+		<constructor-arg ref="com.wcna.calms.service.finance.IFinInterestRateService"/>
+		<constructor-arg ref="com.wcna.calms.service.finance.IFinLongFundingLeaseService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.ICapService"/>
+		<constructor-arg ref="com.wcna.calms.service.finance.IFinRuleService"/>
+		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVapService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSAssetService"/>
+		<constructor-arg ref="quoteBOHelper"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSAssetService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.ICatalogNodeService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.IManufacturerDetailService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.ICatalogRegPlateService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.IModelService"/>
+<!--		<constructor-arg ref="com.wcna.calms.service.quote.IQuoteVatService"/>	-->
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.service.entity.EntityAccessService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<property name="rentACarCSVDelimiter"><value>${spring.com.wcg.jpos.quote.asset.rentacar.csv.delimiter}</value></property>
+		<property name="projectProperties"><ref bean="projectProperties" /></property>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetRentACarUploadService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetRentACarUploadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetOptionsLoadService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetOptionsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.IJPOSSearchService" class="com.wcna.calms.jpos.services.search.JPOSSearchService">
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.service.translation.ITranslationService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerNameService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.search.GetCustomerDetailsService" class="com.wcna.calms.jpos.services.search.GetCustomerDetailsService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.search.IJPOSSearchService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.summary.JPOSProposalSummaryService" class="com.wcna.calms.jpos.services.summary.JPOSProposalSummaryService" parent="com.wcg.calms.ajax.common.CalmsAjaxService" depends-on="com.wcna.calms.util.PropertiesUtil">
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.framework.authorization.IAuthorizationService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.service.notes.IProposalNotesService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSModulePermissionService"/>
+		<constructor-arg ref="com.wcna.calms.service.businesspartner.IBusinessPartnerService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerNameService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppButtonService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IProposalSummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppDisplayService"/>
+		<constructor-arg ref="com.wcna.calms.service.translation.ITranslationService"/>
+		<constructor-arg ref="com.wcna.calms.service.security.IRoleService" />
+		<constructor-arg ref="com.wcna.calms.service.quote.IAssetService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="projectProperties"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.summary.JPOSProposalSummaryDocLoadService" class="com.wcna.calms.jpos.services.summary.JPOSProposalSummaryDocLoadService">
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService"/>
+		<constructor-arg ref="com.wcna.calms.service.document.IDocumentService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.summary.LoadAppStatusSortNumService" class="com.wcna.calms.jpos.services.summary.LoadAppStatusSortNumService">
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.summary.JPOSProposalFinanceDetailsVehicleService" class="com.wcna.calms.jpos.services.summary.JPOSProposalFinanceDetailsVehicleService" parent="com.wcg.calms.ajax.common.CalmsAjaxService" depends-on="com.wcna.calms.util.PropertiesUtil">
+	<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.dealerinfo.GetDealerInfoMessage" class="com.wcna.calms.jpos.services.dealerinfo.GetDealerInfoMessage" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.security.IOperationalStatusService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.navigation.LoadMenuService" class="com.wcna.calms.jpos.services.navigation.LoadMenuService">
+<!--		<constructor-arg ref="com.wcna.calms.service.navigation.IMenuService"/>-->
+		<constructor-arg ref="com.wcna.calms.jpos.services.navigation.MenuService"/>
+	</bean>
+
+	<bean id="com.wcg.calms.service.app.JPOSCreateNewProposalService" class="com.wcna.calms.jpos.services.customer.JPOSCreateNewProposalService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcna.calms.component.IThirdPartyLookupService"/>
+		<constructor-arg ref="com.wcna.calms.service.thirdparty.IThirdPartyApplicationService"/>
+		<constructor-arg ref="com.wcna.calms.component.ITpdbUtilService"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.summary.JPOSProposalSummaryService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuotePlanRefreshService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuotePlanRefreshService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuotePlanChangeService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuotePlanChangeService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSCommercialCustomerLoad" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="CompanyCustomer" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSPartnershipCustomerLoad" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="jposPartnershipApplicant" />
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.JPOSDeleteGuarantorService" class="com.wcna.calms.jpos.services.customer.JPOSDeleteSensitiveService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IProposalSummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppButtonService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.JPOSDeleteGuarantorServiceImplementation"/>
+
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.JPOSDeleteGuarantorServiceImplementation" class="com.wcna.calms.jpos.services.customer.JPOSDeleteGuarantorService">
+		<constructor-arg ref="com.wcg.calms.serivce.guarantor.DeleteGuarantor"/>
+		<property name="buttonKey" value="guarantors"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.JPOSDeleteJointAppService" class="com.wcna.calms.jpos.services.customer.JPOSDeleteSensitiveService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IProposalSummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppButtonService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.JPOSDeleteJointAppServiceImplementation"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.JPOSDeleteJointAppServiceImplementation" class="com.wcna.calms.jpos.services.customer.JPOSDeleteGuarantorService">
+		<constructor-arg ref="com.wcg.calms.serivce.guarantor.DeleteGuarantor"/>
+		<property name="buttonKey" value="joint_applicant"/>
+	</bean>
+
+	<bean id="com.wcna.calms.service.creditline.JPOSCreditLineDeleteService" class="com.wcna.calms.jpos.services.customer.JPOSDeleteSensitiveService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IProposalSummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppButtonService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.service.creditline.JPOSCreditLineDeleteServiceImplementation"/>
+	</bean>
+
+	<bean id="com.wcna.calms.service.creditline.JPOSCreditLineDeleteServiceImplementation" class="com.wcna.calms.service.creditline.JPOSCreditLineDeleteService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.creditline.IJPOSCreditLineDetailsService"/>
+	</bean>
+
+	<bean id="com.wcg.calms.service.customer.JPOSCommercialGuarantorLoad" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="CompanyGuarantor" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSMainIndividualLoad" class="com.wcna.calms.jpos.services.customer.JPOSMainApplicantLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="PrivateInidividualCustomer" />
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.JPOSCopyPrivateIndividualAddressService" class="com.wcna.calms.jpos.services.customer.JPOSCopyPrivateIndividualAddressService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="PrivateInidividualCustomer" />
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.JPOSCopyCompanyAddressService" class="com.wcna.calms.jpos.services.customer.JPOSCopyCompanyAddressService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="CompanyCustomer" />
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.JPOSCopySoleTraderAddressService" class="com.wcna.calms.jpos.services.customer.JPOSCopySoleTraderAddressService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="PrivateInidividualCustomer" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSPrivateIndividualSave" class="com.wcg.calms.service.customer.MainApplicantSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService"/>
+		<constructor-arg ref="com.wcg.calms.service.customer.JPOSMainIndividualLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<property name="screenCode" value="PrivateInidividualCustomer" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSCommercialCustomerSave" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="CompanyCustomer" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.JPOSCommercialCustomerLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSPartnershipCustomerSave" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="jposPartnershipApplicant" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.JPOSPartnershipCustomerLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSCommercialGuarantorSave" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="CompanyGuarantor" />
+		<property name="customerRoleCode" value="G" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.JPOSCommercialGuarantorLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSConsumerGuarantorSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="ConsumerGuarantor" />
+		<property name="customerRoleCode" value="G" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.JPOSConsumerGuarantorLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSConsumerGuarantorLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="ConsumerGuarantor" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.company.JPOSIndividualJointApplicantLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="CompanyCoApplicant" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.company.JPOSPIJointApplicantLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="PrivateIndividualJointApplicant" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.company.JPOSCommercialJointApplicantLoad" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="CoApplicantCompanyType" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.company.JPOSIndividualEffectiveOwnerLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="EffectiveOwner" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.company.JPOSIndividualEffectiveOwnerCopyDirector" class="com.wcg.calms.service.customer.company.JPOSIndividualEffectiveOwnerCopyDirector" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="EffectiveOwner" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.partnership.JPOSIndividualJointApplicantLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="PartnerCoapplicant" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSIndividualJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="CompanyCoApplicant" />
+		<property name="customerRoleCode" value="C" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.company.JPOSIndividualJointApplicantLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSPIJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="PrivateIndividualJointApplicant" />
+		<property name="customerRoleCode" value="C" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.company.JPOSPIJointApplicantLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+
+	<bean id="com.wcg.calms.service.customer.JPOSCompanyJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="CoApplicantCompanyType" />
+		<property name="customerRoleCode" value="C" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.company.JPOSCommercialJointApplicantLoad"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSIndividualEffectiveOwnerSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="EffectiveOwner" />
+		<property name="customerRoleCode" value="R" />
+		<property name="ref2TypeCode" value="O" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.company.JPOSIndividualEffectiveOwnerLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.partnership.JPOSIndividualJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="PartnerCoapplicant" />
+		<property name="customerRoleCode" value="R" />
+		<property name="ref2TypeCode" value="P" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.partnership.JPOSIndividualJointApplicantLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.company.JPOSIndividualJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSensitiveSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<property name="screenCode" value="CompanyCoApplicant" />
+		<property name="customerRoleCode" value="R" />
+		<property name="ref2TypeCode" value="D" />
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcg.calms.service.customer.company.JPOSIndividualJointApplicantLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IJPOSAppStatusService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSRuleGroupListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSRuleGroupListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminRuleService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSRuleGroupDetailsLoadService" class="com.wcna.calms.jpos.services.admin.JPOSRuleGroupDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminRuleService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSRuleGroupDetailsSaveService" class="com.wcna.calms.jpos.services.admin.JPOSRuleGroupDetailsSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminRuleService"/>
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSSoleTraderLoad" class="com.wcna.calms.jpos.services.customer.JPOSMainApplicantLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="jposSoleTraderApplicant" />
+	</bean>
+	<bean id="com.wcg.calms.service.customer.JPOSSoleTraderSave" class="com.wcg.calms.service.customer.MainApplicantSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService"/>
+		<constructor-arg ref="com.wcg.calms.service.customer.JPOSSoleTraderLoad"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+		<property name="screenCode" value="jposSoleTraderApplicant" />
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSCPIGroupListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSCPIGroupListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminCPIService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSCPIGroupDetailsLoadService" class="com.wcna.calms.jpos.services.admin.JPOSCPIGroupDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminCPIService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSCPIGroupDetailsSaveService" class="com.wcna.calms.jpos.services.admin.JPOSCPIGroupDetailsSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminCPIService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSPlanListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSPlanListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPlanService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminRuleService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSPlanDetailsLoadService" class="com.wcna.calms.jpos.services.admin.JPOSPlanDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPlanService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSPlanDetailsSaveService" class="com.wcna.calms.jpos.services.admin.JPOSPlanDetailsSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPlanService"/>
+		<property name="screenCode"><value>jposAdminPlans</value></property>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSPackageListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSPackageListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminSheetService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSPackageVersionListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSPackageVersionListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSPackageDetailsLoadService" class="com.wcna.calms.jpos.services.admin.JPOSPackageDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.vehicleeligibility.IVehicleEligibilityService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.asset.IJPOSVehicleDetailsService" class="com.wcna.calms.jpos.services.asset.JPOSVehicleDetailsService">
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.service.document.IDocumentService"/>
+		<constructor-arg ref="com.wcna.calms.service.asset.IModelService"/>
+		<constructor-arg ref="com.wcna.calms.service.security.IDAGService" />
+		<constructor-arg ref="com.wcna.calms.service.businesspartner.IBusinessPartnerService"/>
+		<constructor-arg ref="com.wcna.calms.service.security.IRoleService" />
+		<property name="projectProperties"><ref bean="projectProperties" /></property>
+
+	</bean>
+	<bean id="com.wcna.calms.service.asset.JPOSVehicleDetailsLoadService" class="com.wcna.calms.service.asset.JPOSVehicleDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IJPOSVehicleDetailsService"/>
+	</bean>
+	<bean id="com.wcna.calms.service.asset.JPOSVehicleDetailsSaveService" class="com.wcna.calms.service.asset.JPOSVehicleDetailsSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IJPOSVehicleDetailsService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IVehiclePreSaveValidationService" />
+        <constructor-arg ref="com.wcna.calms.jpos.services.application.IProposalSummaryService" />
+		<property name="screenCode" value="vehicleDetailsPopup" />
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSPackageDetailsSaveService" class="com.wcna.calms.jpos.services.admin.JPOSPackageDetailsSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSProductSheetLoadService" class="com.wcna.calms.jpos.services.admin.JPOSProductSheetLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminSheetService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSProductSheetGroupLoadService" class="com.wcna.calms.jpos.services.admin.JPOSProductSheetGroupLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminSheetService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSProductSheetValidDatesLoadService" class="com.wcna.calms.jpos.services.admin.JPOSProductSheetValidDatesLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminSheetService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSProductSheetSaveService" class="com.wcna.calms.jpos.services.admin.JPOSProductSheetSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminSheetService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.productsheet.IProductSheetDataLoadService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSProductSheetDeleteService" class="com.wcna.calms.jpos.services.admin.JPOSProductSheetDeleteService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminSheetService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.disbursement.JPOSDealerDisbursementSummaryDealerListLoadService"
+		class="com.wcna.calms.jpos.services.disbursement.JPOSDealerDisbursementSummaryDealerListLoadService"
+		parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.businesspartner.IBusinessPartnerService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.disbursement.JPOSDealerDisbursementSummaryLoadService"
+		class="com.wcna.calms.jpos.services.disbursement.JPOSDealerDisbursementSummaryLoadService"
+		parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.disbursement.IDisbursementService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSDealerProductDealerListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSDealerProductDealerListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPlanService"/>
+   <!-- <constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminDealerService"/> -->
+        <constructor-arg ref="com.wcna.calms.service.businesspartner.IBusinessPartnerService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsLoadService" class="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsDeleteService" class="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsDeleteService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsAddService" class="com.wcna.calms.jpos.services.admin.JPOSDealerProductDetailsAddService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.dealerproduct.FinancialProductSummaryLoadService" class="com.wcna.calms.jpos.services.dealerproduct.FinancialProductSummaryLoadService"  parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.businesspartner.IBusinessPartnerService"></constructor-arg>
+		<constructor-arg ref="com.wcna.calms.jpos.services.dealerproduct.IFinancialProductService"></constructor-arg>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSGroupProductGroupListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSGroupProductGroupListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPlanService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminDealerService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsLoadService" class="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsDeleteService" class="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsDeleteService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsAddService" class="com.wcna.calms.jpos.services.admin.JPOSGroupProductDetailsAddService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSBrandProductBrandListLoadService" class="com.wcna.calms.jpos.services.admin.JPOSBrandProductBrandListLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPlanService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminDealerService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsLoadService" class="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsDeleteService" class="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsDeleteService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsAddService" class="com.wcna.calms.jpos.services.admin.JPOSBrandProductDetailsAddService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminProductService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.document.JPOSQuoteDetailDocumentLoadService" class="com.wcna.calms.jpos.services.document.JPOSQuoteDetailDocumentLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.documents.IJPOSDocumentService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.submit.SubmitProposalService" class="com.wcna.calms.jpos.services.submit.SubmitProposalService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.submit.ISubmitDetailService"/>
+		<constructor-arg ref="com.wcna.calms.service.notes.IProposalNotesService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService"/>
+		<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+	</bean>
+
+
+
+
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerPostSaveService" class="com.wcna.calms.jpos.services.customer.CustomerPostSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.ICustomerService"/>
+		<constructor-arg ref="com.wcna.framework.validation.IValidationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.ICustomerPrioritySectionShowHideService" class="com.wcna.calms.jpos.services.customer.CustomerPrioritySectionShowHideService">
+		<constructor-arg ref="com.wcna.calms.service.security.IRoleService" />
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" class="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+		<constructor-arg ref="com.wcna.calms.service.translation.ITranslationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.ICustomerPrioritySectionShowHideService"/>
+		<property name="validators" ref="${spring.project.customer.validators.map}"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerPhoneValidationService" class="com.wcna.calms.jpos.services.customer.CustomerPhoneValidationService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.RegistrationNumberStateOrMunicipalMandatoryValidationService" class="com.wcna.calms.jpos.services.general.TwoFieldEitherOrMandatoryValidationService">
+		<property name="mandatoryFieldPath" value="applicationCustomer_type_company.stateOfIncorporation"/>
+		<property name="replacementMandatoryFieldPath" value="applicationCustomer_type_company.organizationNumber"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerRegistrationCodeValidationService" class="com.wcna.calms.jpos.services.customer.CustomerRegistrationCodeValidationService">
+		<property name="taxFieldPath" value="applicationCustomer_type_company.registrationCode"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerCPFValidationService" class="com.wcna.calms.jpos.services.customer.CustomerCPFValidationService">
+		<property name="cpfFieldName" value="applicationCustomer_type_company.salespersonTaxNum"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerAssetValidationService" class="com.wcna.calms.jpos.services.customer.CustomerAssetValidationService">
+		<constructor-arg ref="projectProperties"/>
+		<property name="assetControlPrefix" value="applicationCustomerAssetList"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerReferenceValidationService" class="com.wcna.calms.jpos.services.customer.CustomerReferenceValidationService">
+		<constructor-arg ref="projectProperties"/>
+		<property name="refControlPrefix" value="applicationCustomerReferenceList"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerContactValidationService" class="com.wcna.calms.jpos.services.customer.CustomerContactValidationService">
+		<constructor-arg ref="projectProperties"/>
+		<property name="contactControlPrefix" value="applicationCustomerContactsList"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+
+
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerSpouseValidationService" class="com.wcna.calms.jpos.services.customer.CustomerSpouseValidationService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerEmploymentValidationService" class="com.wcna.calms.jpos.services.customer.CustomerEmploymentValidationService">
+	<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+	<constructor-arg ref="projectProperties"/>
+	<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerBankValidationService" class="com.wcna.calms.jpos.services.customer.CustomerBankValidationService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerPrivateIDNumberValidationService" class="com.wcna.calms.jpos.services.customer.CustomerPrivateIDNumberValidationService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+		<constructor-arg ref="com.wcg.calms.service.customer.IDNumberConvertionService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.PrioritySectionValidationService" class="com.wcna.calms.jpos.services.customer.PrioritySectionValidationService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.ICustomerPrioritySectionShowHideService"/>
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerDateOfBirthValidationService" class="com.wcna.calms.jpos.services.customer.CustomerDateOfBirthValidationService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerBankAccountNumberValidationService" class="com.wcna.calms.jpos.services.customer.CustomerBankAccountNumberValidationService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerTelephoneValidator" class="com.wcna.calms.jpos.services.customer.CustomerTelephoneValidator"/>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerIdentityValidationService" class="com.wcna.calms.jpos.services.customer.CustomerIdentityValidationService">
+		<constructor-arg ref="com.wcna.calms.service.validation.IRegexValidationService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerAddressValidationService" class="com.wcna.calms.jpos.services.customer.CustomerAddressValidationService">
+		<constructor-arg ref="projectProperties"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerTradingAddressValidationService" class="com.wcna.calms.jpos.services.customer.CustomerTradingAddressValidationService">
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerCompanyAddressValidationService" class="com.wcna.calms.jpos.services.customer.CustomerCompanyAddressValidationService">
+		<constructor-arg ref="projectProperties"/>
+		<property name="validationType" value="${spring.project.customer.validators.type}"/>
+	</bean>
+
+
+	<bean id="com.wcna.calms.jpos.services.cae.LoadCaeListService" class="com.wcna.calms.jpos.services.cae.LoadCaeListService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>	</bean>
+	<bean id="com.wcna.calms.jpos.services.vap.admin.GetVapListService" class="com.wcna.calms.jpos.services.vap.admin.GetVapListService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.SaveVapService" class="com.wcna.calms.jpos.services.vap.admin.SaveVapService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.ValidateVapCommissionService" class="com.wcna.calms.jpos.services.vap.admin.ValidateVapCommissionService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.GetVapDetailService" class="com.wcna.calms.jpos.services.vap.admin.GetVapDetailService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.SavePremiumService" class="com.wcna.calms.jpos.services.vap.admin.SavePremiumService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.LoadPremiumService" class="com.wcna.calms.jpos.services.vap.admin.LoadPremiumService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.LoadPremiumDetailsService" class="com.wcna.calms.jpos.services.vap.admin.LoadPremiumDetailsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.GetCommissionListService" class="com.wcna.calms.jpos.services.vap.admin.GetCommissionListService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.GetCommissionDetailsService" class="com.wcna.calms.jpos.services.vap.admin.GetCommissionDetailsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.GetPlansListService" class="com.wcna.calms.jpos.services.vap.admin.GetPlansListService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.PlanVapAssociationLoadService" class="com.wcna.calms.jpos.services.vap.admin.PlanVapAssociationLoadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.dealerproduct.SaveDealerProductVapAssociations" class="com.wcna.calms.jpos.services.dealerproduct.SaveDealerProductVapAssociations" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.dealerproduct.IDealerProductVapService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.VapRoleStatusValidateService" class="com.wcna.calms.jpos.services.vap.admin.VapRoleStatusValidateService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vap.admin.SavePlanVapAssociations" class="com.wcna.calms.jpos.services.vap.admin.SavePlanVapAssociations" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vap.admin.IVapAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.dealerproduct.DealerProductVapAssociationLoadService" class="com.wcna.calms.jpos.services.dealerproduct.DealerProductVapAssociationLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.dealerproduct.IDealerProductVapService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSChangeCustTypeService" class="com.wcna.calms.jpos.services.quote.JPOSChangeCustTypeService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.IJPOSQuickQuoteCustomerPreSaveValidatorService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.baserates.admin.SaveBaseRateAndVersionService" class="com.wcna.calms.jpos.services.baserates.admin.SaveBaseRateAndVersionService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.baserates.admin.IBaseRateAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.baserates.admin.GetBaseRatesService" class="com.wcna.calms.jpos.services.baserates.admin.GetBaseRatesService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.baserates.admin.IBaseRateAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.baserates.admin.GetBaseRateVersionsService" class="com.wcna.calms.jpos.services.baserates.admin.GetBaseRateVersionsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.baserates.admin.IBaseRateAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.baserates.admin.GetBaseRateVersionDetailsService" class="com.wcna.calms.jpos.services.baserates.admin.GetBaseRateVersionDetailsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.baserates.admin.IBaseRateAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.usura.admin.UsuraAdminLoadService" class="com.wcna.calms.jpos.services.usura.admin.UsuraAdminLoadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.usura.admin.IUsuraAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.usura.admin.UsuraAdminSaveService" class="com.wcna.calms.jpos.services.usura.admin.UsuraAdminSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.usura.admin.IUsuraAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.usura.admin.UsuraAdminGetVersionDetailsService" class="com.wcna.calms.jpos.services.usura.admin.UsuraAdminGetVersionDetailsService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.usura.admin.IUsuraAdminService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.creditline.IJPOSCreditLineDetailsService" class="com.wcna.calms.jpos.services.creditline.JPOSCreditLineDetailsService">
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService"/>
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+	</bean>
+	<bean id="com.wcna.calms.service.creditline.JPOSCreditLineDetailsLoadService" class="com.wcna.calms.service.creditline.JPOSCreditLineDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.creditline.IJPOSCreditLineDetailsService"/>
+		<property name="screenCode" value="JPOSCreditLineDetailsScreen" />
+	</bean>
+	<bean id="com.wcna.calms.service.creditline.JPOSCreditLineDetailsSaveService" class="com.wcna.calms.service.creditline.JPOSCreditLineDetailsSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.creditline.IJPOSCreditLineDetailsService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.application.IAppButtonService"/>
+		<constructor-arg ref="com.wcna.calms.service.creditline.JPOSCreditLineDetailsLoadService"/>
+	</bean>
+	<bean id="com.wcna.calms.service.creditline.JPOSCreditLineDetailsListService" class="com.wcna.calms.service.creditline.JPOSCreditLineDetailsListService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.creditline.IJPOSCreditLineDetailsService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.admin.GetBaseRateSumService" class="com.wcna.calms.jpos.services.admin.GetBaseRateSumService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.IJPOSAdminPackageService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteTaxPointDateChangeService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteTaxPointDateChangeService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteVatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteAssetService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteDocumentHandleService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteDocumentHandleService">
+		<constructor-arg ref="DocumentXMLGenerator"/>
+		<constructor-arg ref="CalmsEdmWebClient"/>
+		<constructor-arg ref="com.wcna.calms.service.document.IDocumentService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.documents.IJPOSDocumentService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteDocumentLoadService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteDocumentLoadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.GenStructuredProfileService" class="com.wcna.calms.jpos.services.quote.GenStructuredProfileService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.AdjustStructuredProfileService" class="com.wcna.calms.jpos.services.quote.AdjustStructuredProfileService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.GetMoreStructuredPaymentsService" class="com.wcna.calms.jpos.services.quote.GetMoreStructuredPaymentsService">
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCostInputChangeService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCostInputChangeService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSelTPDBCustomerService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteSelTPDBCustomerService">
+		<constructor-arg ref="com.wcna.calms.component.IThirdPartyLookupService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteGetCapMonitorValueService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteGetCapMonitorValueService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCustomerDetailLoadService" class="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteCustomerDetailLoadService">
+		<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+		<constructor-arg ref="com.wcna.calms.component.IThirdPartyLookupService"/>
+		<constructor-arg ref="com.wcna.calms.service.thirdparty.IThirdPartyApplicationService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" class="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.ICustomerPrioritySectionShowHideService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.admin.residualvalue.ResidualValueLoadService" class="com.wcna.calms.jpos.services.admin.residualvalue.ResidualValueLoadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.residualvalue.IResidualValueService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.admin.residualvalue.ResidualValueSaveService" class="com.wcna.calms.jpos.services.admin.residualvalue.ResidualValueSaveService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.residualvalue.IResidualValueService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.admin.tieredplan.TieredPlanSaveService" class="com.wcna.calms.jpos.services.admin.tieredplan.TieredPlanSaveService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.tieredplan.ITieredPlanService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.admin.tieredplan.TieredPlanLoadService" class="com.wcna.calms.jpos.services.admin.tieredplan.TieredPlanLoadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.admin.tieredplan.ITieredPlanService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityUploadService" class="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityUploadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vehicleeligibility.IVehicleEligibilityService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityLoadService" class="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityLoadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vehicleeligibility.IVehicleEligibilityService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityGetDetailService" class="com.wcna.calms.jpos.services.vehicleeligibility.VehicleEligibilityGetDetailService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.vehicleeligibility.IVehicleEligibilityService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.settlement.SettlementQuoteLoadService" class="com.wcna.calms.jpos.services.settlement.SettlementQuoteLoadService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.settlement.ISettlementQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.settlement.JPOSSettlementDocumentHandleService" class="com.wcna.calms.jpos.services.settlement.JPOSSettlementDocumentHandleService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="CalmsEdmWebClient"/>
+		<constructor-arg ref="com.wcna.calms.service.document.IDocumentService"/>
+		<constructor-arg ref="com.wcna.calms.service.udt.IUdtTranslationService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.documents.IJPOSDocumentService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.settlement.SettlementQuoteRetrieveService" class="com.wcna.calms.jpos.services.settlement.SettlementQuoteRetrieveService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.settlement.ISettlementQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg><null/></constructor-arg>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.settlement.SettlementQuoteCloseService" class="com.wcna.calms.jpos.services.settlement.SettlementQuoteCloseService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.settlement.ISettlementQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.settlement.SettlementQuoteAcceptService" class="com.wcna.calms.jpos.services.settlement.SettlementQuoteAcceptService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuoteUtil"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.quote.JPOSQuickQuoteService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.securityadmin.UserSearch" class="com.wcna.calms.jpos.services.securityadmin.UserSearch" parent="com.wcg.calms.service.dealer.UserSearchService">
+	   <constructor-arg>
+	       <list><value>SM</value></list>
+	   </constructor-arg>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.securityadmin.UserDelete" class="com.wcna.calms.jpos.services.securityadmin.UserDelete">
+		<constructor-arg ref="com.wcna.calms.service.security.IUserService"/>
+	</bean>
+
+	<!-- BPM customer screens - begin -->
+	<bean id="com.wcg.calms.service.bpm.customer.JPOSMainIndividualLoad" class="com.wcna.calms.jpos.services.customer.JPOSMainApplicantLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+		<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+		<property name="screenCode" value="BpmPrivateInidividualCustomer" />
+	</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSPrivateIndividualSave" class="com.wcg.calms.service.customer.MainApplicantSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService"/>
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.JPOSMainIndividualLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+				<property name="screenCode" value="BpmPrivateInidividualCustomer" />
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSSoleTraderLoad" class="com.wcna.calms.jpos.services.customer.JPOSMainApplicantLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+				<property name="screenCode" value="BpmJposSoleTraderApplicant" />
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSSoleTraderSave" class="com.wcg.calms.service.customer.MainApplicantSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService"/>
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.JPOSSoleTraderLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+				<property name="screenCode" value="BpmjposSoleTraderApplicant" />
+			</bean>
+
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSCommercialCustomerSave" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<property name="screenCode" value="BpmCompanyCustomer" />
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.JPOSCommercialCustomerLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSCommercialCustomerLoad" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+				<property name="screenCode" value="BpmCompanyCustomer" />
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSPartnershipCustomerSave" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<property name="screenCode" value="BpmjposPartnershipApplicant" />
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.JPOSCommercialCustomerLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+			</bean>
+
+			<bean id="com.wcg.calms.service.bpm.company.JPOSIndividualJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<property name="screenCode" value="BpmCompanyCoApplicant" />
+				<property name="customerRoleCode" value="R" />
+				<property name="ref2TypeCode" value="D" />
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.company.JPOSIndividualJointApplicantLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSIndividualJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<property name="screenCode" value="BpmCompanyCoApplicant" />
+				<property name="customerRoleCode" value="C" />
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.company.JPOSIndividualJointApplicantLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.company.JPOSIndividualJointApplicantLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+				<property name="screenCode" value="BpmCompanyCoApplicant" />
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.partnership.JPOSIndividualJointApplicantSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<property name="screenCode" value="BpmCompanyCoApplicant" />
+				<property name="customerRoleCode" value="R" />
+				<property name="ref2TypeCode" value="P" />
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.partnership.JPOSIndividualJointApplicantLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.partnership.JPOSIndividualJointApplicantLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+				<property name="screenCode" value="BpmCompanyCoApplicant" />
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSConsumerGuarantorSave" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<property name="screenCode" value="BpmConsumerGuarantor" />
+				<property name="customerRoleCode" value="G" />
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.JPOSConsumerGuarantorLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSConsumerGuarantorLoad" class="com.wcna.calms.jpos.services.customer.JPOSConsumerCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericConsumerService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+				<property name="screenCode" value="BpmConsumerGuarantor" />
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSCommercialGuarantorSave" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerSave" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<property name="screenCode" value="BpmCompanyGuarantor" />
+				<property name="customerRoleCode" value="G" />
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+				<constructor-arg ref="com.wcna.calms.service.application.IApplicationService" />
+				<constructor-arg ref="com.wcg.calms.service.bpm.customer.JPOSCommercialGuarantorLoad"/>
+				<constructor-arg ref="com.wcg.calms.service.app.SummaryService"/>
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPreSaveValidationService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostSaveService"/>
+			</bean>
+			<bean id="com.wcg.calms.service.bpm.customer.JPOSCommercialGuarantorLoad" class="com.wcna.calms.jpos.services.customer.JPOSCommercialCustomerLoad" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+				<constructor-arg ref="com.wcna.calms.service.customer.IGenericCommercialService" />
+				<constructor-arg ref="com.wcna.calms.jpos.services.customer.CustomerPostLoadService" />
+				<property name="screenCode" value="BpmCompanyGuarantor" />
+			</bean>
+		<!-- BPM customer screens - end -->
+
+	<!--capupdate screen start-->
+	<bean id="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsLoadService" class="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsLoadService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IJPOSVehicleCAPDetailsService"/>
+	</bean>
+
+	<bean id="com.wcna.calms.jpos.services.asset.IJPOSVehicleCAPDetailsService" class="com.wcna.calms.jpos.services.asset.JPOSVehicleCAPDetailsService">
+		<constructor-arg ref="com.wcna.calms.service.format.IFormatService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IJPOSCapService"/>
+	</bean>
+
+		<bean id="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsSaveService" class="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsSaveService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IJPOSVehicleCAPDetailsService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IVehiclePreSaveValidationService" />
+		<property name="screenCode" value="CapUpdate"/>
+	</bean>
+
+
+	<bean id="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsLookupService" class="com.wcna.calms.service.asset.JPOSVehicleCAPDetailsLookupService" parent="com.wcg.calms.ajax.common.CalmsAjaxService">
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IJPOSVehicleCAPDetailsService"/>
+		<constructor-arg ref="com.wcna.calms.jpos.services.asset.IVehiclePreSaveValidationService" />
+		<property name="screenCode" value="CapUpdate"/>
+	</bean>
+
+
+
+
+
+<!--capupdate screen end-->
+
+
+</beans>

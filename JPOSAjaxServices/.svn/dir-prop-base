@@ -1,0 +1,21 @@
+K 10
+svn:ignore
+V 43
+.settings
+build
+target
+.classpath
+.project
+
+K 13
+svn:mergeinfo
+V 581
+/CALMS/branches/Core/6.6.7-DeleteUser-fixes/CalmsCoreConfigs:23124
+/CALMS/branches/JPOS/1.2.3-QuoteScreen-changes/JPOSAjaxServices:20752
+/CALMS/branches/JPOS/2.0.0-WCGCALMSTWO-96/JPOSAjaxServices:27903-28111
+/CALMS/branches/JPOS/2.1.19-RC11-p01-WCGCALMSTWO-1742-Dealer-Disbursement-Functionality/JPOSAjaxServices:33213-33339
+/CALMS/branches/JPOS/7.1.33-WCGCALMSTWO-4074-Simulation-changes/JPOSAjaxServices:42004-42094
+/CALMS/tags/JPOS/2.0.0/JPOSAjaxServices:26635
+/CALMS/tags/JPOS/2.1.19-RC11-p01/JPOSAjaxServices:33212
+/CALMS/tags/JPOS/7.1.16-RC11-p01/JPOSAjaxServices:33010-33211
+END

@@ -1,0 +1,37 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class HibernateVehicleServiceTest {
+
+	@Test
+	public void testVehicleServiceConstructor() {
+		VehicleService vehicleService = new VehicleService();
+		
+		vehicleService = new VehicleService();
+		
+		Make make = new Make();	make.setName("Make1"); 
+		Make make2 = new Make();make2.setName("Make2");
+
+		vehicleService.saveMake(make);
+		vehicleService.saveMake(make2);
+		
+		String hql = "FROM Make";
+		org.hibernate.Query query = vehicleService.createQuery(hql);
+		List result = query.list();
+		
+		assertTrue(result.contains(make));
+		assertTrue(result.contains(make2));
+	}
+	
+	
+	
+	
+
+}

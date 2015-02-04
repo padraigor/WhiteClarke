@@ -1,0 +1,38 @@
+package org.porourke.carshop.model;
+
+import org.porourke.carshop.model.hibernate.Modelnterface;
+import org.porourke.carshop.model.vechicles.Model;
+
+public interface VechicleInterface {
+
+	public abstract String toString();
+
+	public abstract String getReg();
+
+	public abstract void setReg(String reg);
+
+	public abstract Modelnterface getModel();
+
+	public abstract int getId();
+
+	public abstract void setId(int id);
+
+	public abstract void setModel(Model model);
+
+	public abstract String getColour();
+
+	public abstract void setColour(String colour);
+
+	public abstract int getYear();
+
+	public abstract void setYear(int year);
+
+	public abstract int getEngSizeCC();
+
+	public abstract void setEngSizeCC(int engSizeCC);
+
+	public abstract int hashCode();
+
+	public abstract boolean equals(Object obj);
+
+}

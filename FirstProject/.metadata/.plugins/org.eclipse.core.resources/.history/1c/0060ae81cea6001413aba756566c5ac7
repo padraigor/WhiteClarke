@@ -1,0 +1,60 @@
+package org.porourke.carshop.model.hibernate;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Set;
+
+import org.porourke.carshop.model.ModelInterface;
+import org.porourke.carshop.model.vechicles.Make;
+import org.porourke.carshop.model.vechicles.Vehicle;
+
+public class HibernateModel implements ModelInterface{
+	private int id;		//Unique Identifer
+	private Collection<Vehicle> vehicles; // List of Vehicles with this model
+	private Make make;  // Car make for this model
+	private String name;
+	
+	public HibernateModel(){
+		this( -1, new ArrayList<Vehicle>(), null, "");
+	}
+	
+	public HibernateModel(Collection<Vehicle> vehicles, Make make, String name){
+		this(-1,vehicles, make, name);
+	}
+	
+	public HibernateModel(int id, Collection<Vehicle> vehicles, Make make, String name) {
+		super();
+		this.id = id;
+		this.vehicles = vehicles;
+		this.make = make;
+		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Collection<Vehicle> getVehicles() {
+		return this.vehicles;
+	}
+	public void setVehicles(Collection<Vehicle> vehicles) {
+		this.vehicles = vehicles;	
+	}
+	public Make getMake() {
+		return this.make;
+	}
+	public void setMake(Make make) {
+		this.make = make;
+	}
+	public String getName(){	
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+
+}

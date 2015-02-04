@@ -1,0 +1,16 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.*;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class HibernateVehicleServiceTest {
+
+	@Test
+	public void test() {
+		VechicleService vehicleService = new VehicleService();
+	}
+
+}

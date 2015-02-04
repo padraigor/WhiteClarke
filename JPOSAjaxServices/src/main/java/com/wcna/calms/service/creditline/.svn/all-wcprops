@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/creditline
+END
+JPOSCreditLineDetailsListService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/creditline/JPOSCreditLineDetailsListService.java
+END
+JPOSCreditLineDeleteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/creditline/JPOSCreditLineDeleteService.java
+END
+JPOSCreditLineDetailsSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/creditline/JPOSCreditLineDetailsSaveService.java
+END
+JPOSCreditLineDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/creditline/JPOSCreditLineDetailsLoadService.java
+END
+JPOSCreditLineDetailsVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/creditline/JPOSCreditLineDetailsVO.java
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/summary
+END
+JPOSProposalSummaryDocLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/summary/JPOSProposalSummaryDocLoadService.java
+END
+JPOSProposalFinanceDetailsVehicleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/summary/JPOSProposalFinanceDetailsVehicleService.java
+END
+JPOSProposalSummaryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/summary/JPOSProposalSummaryService.java
+END
+LoadAppStatusSortNumService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/summary/LoadAppStatusSortNumService.java
+END
+JPOSApplicantInfoDisplayVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/summary/JPOSApplicantInfoDisplayVO.java
+END
+JPOSProposalSummaryVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/summary/JPOSProposalSummaryVO.java
+END

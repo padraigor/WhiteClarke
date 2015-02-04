@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/cra
+END
+CraSummaryLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/cra/CraSummaryLoadService.java
+END
+CraProposalLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/cra/CraProposalLoadService.java
+END
+AdHocCraSearchSave.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/cra/AdHocCraSearchSave.java
+END
+CraProposalLoadParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/cra/CraProposalLoadParameters.java
+END
+CRASearchLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/cra/CRASearchLoadService.java
+END

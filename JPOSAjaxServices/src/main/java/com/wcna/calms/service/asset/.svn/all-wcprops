@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/asset
+END
+JPOSVehicleCAPDetailsLookupService.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/asset/JPOSVehicleCAPDetailsLookupService.java
+END
+JPOSVehicleDetailsSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/asset/JPOSVehicleDetailsSaveService.java
+END
+JPOSVehicleDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/asset/JPOSVehicleDetailsLoadService.java
+END
+JPOSVehicleCAPDetailsSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/asset/JPOSVehicleCAPDetailsSaveService.java
+END
+JPOSVehicleCAPDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/asset/JPOSVehicleCAPDetailsLoadService.java
+END
+JPOSVehicleDetailsVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/service/asset/JPOSVehicleDetailsVO.java
+END

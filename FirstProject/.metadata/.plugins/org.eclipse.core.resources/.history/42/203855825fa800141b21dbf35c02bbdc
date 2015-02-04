@@ -1,0 +1,39 @@
+package org.porourke.carshop.model.hibernate;
+
+import java.util.Collection;
+
+import org.porourke.carshop.model.MakeInterface;
+import org.porourke.carshop.model.ModelInterface;
+import org.porourke.carshop.model.VehicleInterface;
+import org.porourke.carshop.model.VehiclesInterface;
+import org.porourke.carshop.model.vechicles.Make;
+import org.porourke.carshop.model.vechicles.Vehicle;
+
+public class VehicleService implements VehiclesInterface{
+
+	public Collection<Make> getMakes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Make getMakeById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Model getModelById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Vehicle getVehicleById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void saveVehicle(Vehicle vehicle) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

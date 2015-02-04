@@ -1,0 +1,136 @@
+package org.porourke.carshop.model.hibernate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Vehicle{
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id; // unique identifier
+	private String reg; // Registration Plate number add Vin later if required
+
+	@ManyToOne
+	private Model model; // Car model, links onto car Make/Manufacture
+	private String colour;
+	private int year;
+	private int engSizeCC;
+
+	public Vehicle() {
+		this(-1, "", null, "", -1, -1);
+	}
+
+	public Vehicle(String reg, Model model, String colour,
+			int year, int engSizeCC) {
+		this(-1, reg, model, colour, year, engSizeCC);
+	}
+
+	public Vehicle(long id, String reg, Model model, String colour, int year, int engSizeCC) {
+		super();
+		this.id = id;
+		this.reg = reg;
+		this.model = model;
+		this.colour = colour;
+		this.year = year;
+		this.engSizeCC = engSizeCC;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getReg() {
+		return reg;
+	}
+
+	public void setReg(String reg) {
+		this.reg = reg;
+	}
+
+	public Model getModel() {
+		return model;
+	}
+
+	public void setModel(Model model) {
+		this.model = model;
+		model.addVehicle(this);
+	}
+
+	public String getColour() {
+		return colour;
+	}
+
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public int getEngSizeCC() {
+		return engSizeCC;
+	}
+
+	public void setEngSizeCC(int engSizeCC) {
+		this.engSizeCC = engSizeCC;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((colour == null) ? 0 : colour.hashCode());
+		result = prime * result + engSizeCC;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((reg == null) ? 0 : reg.hashCode());
+		result = prime * result + year;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vehicle other = (Vehicle) obj;
+		if (colour == null) {
+			if (other.colour != null)
+				return false;
+		} else if (!colour.equals(other.colour))
+			return false;
+		if (engSizeCC != other.engSizeCC)
+			return false;
+		if (id != other.id)
+			return false;
+		if (reg == null) {
+			if (other.reg != null)
+				return false;
+		} else if (!reg.equals(other.reg))
+			return false;
+		if (year != other.year)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [id=" + id + ", reg=" + reg + ", colour="
+				+ colour + ", year=" + year + ", engSizeCC=" + engSizeCC + "]";
+	}
+
+}

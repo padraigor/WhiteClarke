@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/search
+END
+InitiateAdvancedSearchListsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/search/InitiateAdvancedSearchListsService.java
+END
+DealerNameChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/search/DealerNameChangeService.java
+END
+SearchFinanceBreakdownService.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/search/SearchFinanceBreakdownService.java
+END
+GetCustomerDetailsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/search/GetCustomerDetailsService.java
+END
+JPOSHomeSearchService.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/search/JPOSHomeSearchService.java
+END
+BasicAdvancedSearchService.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/search/BasicAdvancedSearchService.java
+END

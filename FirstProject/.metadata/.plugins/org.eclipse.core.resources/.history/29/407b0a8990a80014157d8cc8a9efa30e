@@ -1,0 +1,78 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.*;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class HibernateVehicleServiceTest {
+
+	@Test
+	public void testVehicleServiceConstructor() {
+		VehicleService vehicleService = new VehicleService();
+		
+		vehicleService = new VehicleService();
+		
+		Make make = new Make();	make.setName("Make1"); 
+		Make make2 = new Make();make2.setName("Make2");
+
+		vehicleService.saveMake(make);
+		vehicleService.saveMake(make2);
+		
+		Collection<Make> result = vehicleService.getMakes();
+		
+		assertTrue(result.contains(make));
+		assertTrue(result.contains(make2));
+		
+		vehicleService.destroy();
+	}
+
+	@Test
+	public void testVehicleServicegetMakesbyId() {
+		VehicleService vehicleService = new VehicleService();		
+		
+		Make make = new Make();		make.setName("Make1"); 	
+		Make make2 = new Make();	make2.setName("Make2");
+
+		vehicleService.saveMake(make);
+		vehicleService.saveMake(make2);
+		
+		Make result1 = vehicleService.getMakeById(make.getId());
+		Make result2 = vehicleService.getMakeById(make2.getId());
+	
+		assertEquals("Make1", result1.getName());
+		assertEquals("Make2", result2.getName());
+		
+		vehicleService.destroy();
+	}
+	
+	@Test
+	public void testVehicleServicegetModelsbyId() {
+		VehicleService vehicleService = new VehicleService();		
+		
+		Model model = new Model();	
+		model.setName("Model1"); 	
+		
+		Model model2 = new Model();	
+		model2.setName("Model2");
+
+		vehicleService.saveModel(model);
+		vehicleService.saveModel(model2);
+		
+		Model result1 = vehicleService.getModelById(model.getId());
+		Model result2 = vehicleService.getModelById(model2.getId());
+	
+		assertEquals("Model1", result1.getName());
+		assertEquals("Model2", result2.getName());
+		
+		vehicleService.destroy();
+	}
+	
+	
+	
+
+}

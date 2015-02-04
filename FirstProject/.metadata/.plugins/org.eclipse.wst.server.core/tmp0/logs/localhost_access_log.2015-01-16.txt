@@ -1,0 +1,16 @@
+127.0.0.1 - - [16/Jan/2015:16:57:47 +0000] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:16:58:03 +0000] "GET /carshop-frontend/ HTTP/1.1" 200 453
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:16:58:03 +0000] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:16:58:05 +0000] "GET /carshop-frontend/availableCars?varible=value HTTP/1.1" 200 1039
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:06:36 +0000] "GET /carshop-frontend/availableCars?selectedMake=saab HTTP/1.1" 200 1234
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:06:41 +0000] "GET /carshop-frontend/availableCars?selectedMake=saab HTTP/1.1" 200 1234
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:06:43 +0000] "GET /carshop-frontend/availableCars?selectedMake=opel HTTP/1.1" 200 1234
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:06:44 +0000] "GET /carshop-frontend/availableCars?selectedMake=opel HTTP/1.1" 200 1234
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:06:46 +0000] "GET /carshop-frontend/availableCars?selectedMake=opel HTTP/1.1" 200 1234
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:06:50 +0000] "GET /carshop-frontend/availableCars?selectedMake=saab HTTP/1.1" 200 1234
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:06:53 +0000] "GET /carshop-frontend/availableCars?selectedMake=saab HTTP/1.1" 200 1234
+127.0.0.1 - - [16/Jan/2015:17:23:23 +0000] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:23:24 +0000] "GET /carshop-frontend/WEB-INF/views/AvailableCars.jsp HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:23:34 +0000] "GET /carshop-frontend/availableCars?selectedMake=saab HTTP/1.1" 500 4240
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:31:31 +0000] "GET /carshop-frontend/availableCars?selectedMake=saab HTTP/1.1" 500 4240
+0:0:0:0:0:0:0:1 - - [16/Jan/2015:17:33:10 +0000] "GET /carshop-frontend/availableCars?selectedMake=saab HTTP/1.1" 200 1534

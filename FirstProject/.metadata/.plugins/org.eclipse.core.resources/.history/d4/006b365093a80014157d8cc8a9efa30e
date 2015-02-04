@@ -1,0 +1,126 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.Collection;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class HibernateVehicleServiceTest {
+	VehicleService vehicleService;
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	
+	@Before
+	public void setup(){
+		vehicleService = new VehicleService(sessionFactory);
+	}
+	@After 
+	public void finish(){
+		vehicleService.destroy();
+	}
+	@Test
+	public void testVehicleServiceConstructor() {	
+		
+		Make make = new Make();	make.setName("Make1"); 
+		Make make2 = new Make();make2.setName("Make2");
+
+		vehicleService.saveMake(make);
+		vehicleService.saveMake(make2);
+		
+		Collection<Make> result = vehicleService.getMakes();
+		
+		assertTrue(result.contains(make));
+		assertTrue(result.contains(make2));
+		
+	
+	}
+
+	@Test
+	public void testVehicleServicegetMakesbyId() {
+		
+		Make make = new Make();		make.setName("Make1"); 	
+		Make make2 = new Make();	make2.setName("Make2");
+
+		vehicleService.saveMake(make);
+		vehicleService.saveMake(make2);
+		
+		Make result1 = vehicleService.getMakeById(make.getId());
+		Make result2 = vehicleService.getMakeById(make2.getId());
+	
+		assertEquals("Make1", result1.getName());
+		assertEquals("Make2", result2.getName());
+		
+
+	}
+	
+	@Test
+	public void testVehicleServicegetModelsbyId() {
+		
+		Model model = new Model();	
+		model.setName("Model1"); 	
+		
+		Model model2 = new Model();	
+		model2.setName("Model2");
+
+		vehicleService.saveModel(model);
+		vehicleService.saveModel(model2);
+		
+		Model result1 = vehicleService.getModelById(model.getId());
+		Model result2 = vehicleService.getModelById(model2.getId());
+	
+		assertEquals("Model1", result1.getName());
+		assertEquals("Model2", result2.getName());
+
+	}
+	
+	@Test
+	public void testVehicleServicegetVehiclesbyId() {
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		
+		Vehicle vehicle2 = new Vehicle();	
+		vehicle2.setReg("XYZ123");
+
+		vehicleService.saveVehicle(vehicle);
+		vehicleService.saveVehicle(vehicle2);
+		
+		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
+		Vehicle result2 = vehicleService.getVehicleById(vehicle2.getId());
+	
+		assertEquals("ABC123", result1.getReg());
+		assertEquals("XYZ123", result2.getReg());
+		
+	}
+	
+	@Test
+	public void TestDeepSave() {
+		Make make = new Make();
+		make.setName("Lada");
+		
+		Model model= new Model();
+		model.setName("BrokenCar");
+		make.addModel(model);
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		vehicle.setModel(model);
+
+		vehicleService.saveVehicle(vehicle);
+		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
+		
+		assertNotNull(result1.getModel());
+
+	}
+	
+	
+	
+	
+
+}

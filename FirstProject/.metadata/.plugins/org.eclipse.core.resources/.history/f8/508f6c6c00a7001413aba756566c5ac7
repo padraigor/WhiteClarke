@@ -1,0 +1,33 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.porourke.carshop.model.ModelInterface;
+import org.porourke.carshop.model.VehicleInterface;
+
+public class HibernateModelTest {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Test
+	public void testNoParameterConstructor() {
+		ModelInterface model = new HibernateModel();
+		
+		assertEquals(-1,model.getId());
+		assertEquals("",model.getName());
+		assertEquals(null,model.getMake());
+		assertEquals(new ArrayList<VehicleInterface>().getClass(),model.getVehicles().getClass());
+	}
+
+}

@@ -1,0 +1,70 @@
+package org.porourke.carshop.model.hibernate;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import org.porourke.carshop.model.MakeInterface;
+import org.porourke.carshop.model.ModelInterface;
+import org.porourke.carshop.model.VehicleInterface;
+import org.porourke.carshop.model.vechicles.Make;
+import org.porourke.carshop.model.vechicles.Vehicle;
+
+
+public class HibernateModel implements ModelInterface{
+	private int id;		//Unique Identifer
+	private Collection<VehicleInterface> vehicles; // List of Vehicles with this model
+	private MakeInterface make;  // Car make for this model
+	private String name;
+	
+	public HibernateModel(){
+		this( -1, new ArrayList<VehicleInterface>(), null, "");
+	}
+	
+	public HibernateModel(Collection<VehicleInterface> vehicles, MakeInterface make, String name){
+		this(-1,vehicles, make, name);
+	}
+	
+	public HibernateModel(int id, Collection<VehicleInterface> vehicles, MakeInterface make, String name) {
+		super();
+		this.id = id;
+		this.vehicles = vehicles;
+		this.make = make;
+		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Collection<VehicleInterface> getVehicles() {
+		return this.vehicles;
+	}
+	public void setVehicles(Collection<VehicleInterface> vehicles) {
+		this.vehicles = vehicles;	
+	}
+	public MakeInterface getMake() {
+		return this.make;
+	}
+	public void setMake(Make make) {
+		this.make = make;
+	}
+	public String getName(){	
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	public void setMake(MakeInterface make) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
+
+}

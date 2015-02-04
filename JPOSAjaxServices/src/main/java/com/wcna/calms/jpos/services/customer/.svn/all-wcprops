@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer
+END
+JPOSDeleteGuarantorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSDeleteGuarantorService.java
+END
+PrioritySectionValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/PrioritySectionValidationService.java
+END
+CustomerPrioritySectionShowHideService.java
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerPrioritySectionShowHideService.java
+END
+CustomerEmploymentValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerEmploymentValidationService.java
+END
+CustomerIdentityValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerIdentityValidationService.java
+END
+CustomerPostSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerPostSaveService.java
+END
+JPOSConsumerCustomerLoad.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSConsumerCustomerLoad.java
+END
+CustomerContactValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerContactValidationService.java
+END
+CustomerDateOfBirthValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerDateOfBirthValidationService.java
+END
+JPOSDeleteSensitiveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSDeleteSensitiveService.java
+END
+CustomerTradingAddressValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerTradingAddressValidationService.java
+END
+CustomerReferenceValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerReferenceValidationService.java
+END
+JPOSCopySoleTraderAddressService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSCopySoleTraderAddressService.java
+END
+CustomerPreSaveValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerPreSaveValidationService.java
+END
+JPOSCopyCompanyAddressService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSCopyCompanyAddressService.java
+END
+CustomerCPFValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerCPFValidationService.java
+END
+CustomerSpouseValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerSpouseValidationService.java
+END
+JPOSMainApplicantLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSMainApplicantLoadService.java
+END
+JPOSCopyPrivateIndividualAddressService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSCopyPrivateIndividualAddressService.java
+END
+JPOSCommercialCustomerSensitiveSave.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSCommercialCustomerSensitiveSave.java
+END
+CustomerAddressValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerAddressValidationService.java
+END
+JPOSCommercialCustomerSave.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSCommercialCustomerSave.java
+END
+JPOSCreateNewProposalService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSCreateNewProposalService.java
+END
+CustomerTelephoneValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerTelephoneValidator.java
+END
+CustomerShowHideService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerShowHideService.java
+END
+CustomerPrivateIDNumberValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerPrivateIDNumberValidationService.java
+END
+CustomerBankAccountNumberValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerBankAccountNumberValidationService.java
+END
+JPOSConsumerCustomerSensitiveSave.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSConsumerCustomerSensitiveSave.java
+END
+CustomerRegistrationCodeValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerRegistrationCodeValidationService.java
+END
+CustomerPhoneValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerPhoneValidationService.java
+END
+JPOSConsumerCustomerSave.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSConsumerCustomerSave.java
+END
+CustomerPostLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerPostLoadService.java
+END
+JPOSCommercialCustomerLoad.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/JPOSCommercialCustomerLoad.java
+END
+CustomerBankValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerBankValidationService.java
+END
+DateParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/DateParser.java
+END
+CustomerCompanyAddressValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerCompanyAddressValidationService.java
+END
+CustomerAssetValidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/customer/CustomerAssetValidationService.java
+END

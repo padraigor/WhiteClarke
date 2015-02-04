@@ -1,0 +1,141 @@
+package org.porourke.carshop.model.hibernate;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+
+@Entity(name = "Model")
+public class Model {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id; // Unique Identifer
+
+	@OneToMany //@Transient
+	private Collection<Vehicle> vehicles; // List of Vehicles with this
+	
+	@Transient// model
+	//@Column(name = "make_id")
+	private Make make; // Car make for this model
+	
+	private String name;
+
+	public Model() {
+		this(-1, new ArrayList<Vehicle>(), null, "");
+	}
+
+	public Model(Collection<Vehicle> vehicles,Make make, String name) {
+		this(-1, vehicles, make, name);
+	}
+
+	public Model(int id, Collection<Vehicle> vehicles,Make make, String name) {
+		super();
+		this.id = id;
+		this.vehicles = vehicles;
+		this.make = make;
+		this.name = name;
+
+		if (vehicles != null) {
+			for (Vehicle v : vehicles) {
+				v.setModel(this);
+			}
+		}
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Collection<Vehicle> getVehicles() {
+		return this.vehicles;
+	}
+
+	public void setVehicles(Collection<Vehicle> vehicles) {
+		this.vehicles = vehicles;
+		for (Vehicle v : vehicles) {
+			v.setModel(this);
+		}
+	}
+
+	public void addVehicle(org.porourke.carshop.model.hibernate.Vehicle vehicle) {
+		if (!vehicles.contains(vehicle)) {
+			vehicles.add(vehicle);
+			vehicle.setModel(this);
+		}
+
+	}
+
+	public Make getMake() {
+		return this.make;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setMake(Make make) {
+		this.make = make;
+		make.addModel(this);// ? check
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((make == null) ? 0 : make.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Model other = (Model) obj;
+		if (id != other.id)
+			return false;
+		if (make == null) {
+			if (other.make != null)
+				return false;
+		} else if (!make.equals(other.make))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Model [id=" + id + ", vehicles=" + vehicles
+				+ ", make=" + make + ", name=" + name + "]";
+	}
+
+
+}

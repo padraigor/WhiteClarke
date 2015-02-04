@@ -1,0 +1,15 @@
+package org.porourke.carshop.model;
+
+import java.util.Collection;
+import java.util.Set;
+
+import org.porourke.carshop.model.vechicles.Make;
+import org.porourke.carshop.model.vechicles.Vehicle;
+
+public interface VehiclesInterface {	
+	public Collection<Make> getMakes();
+	public MakeInterface getMakeById(long id);
+	public ModelInterface getModelById(long id);
+	public VehicleInterface getVehicleById(long id);
+	public void saveVehicle(Vehicle Vehicle);
+}

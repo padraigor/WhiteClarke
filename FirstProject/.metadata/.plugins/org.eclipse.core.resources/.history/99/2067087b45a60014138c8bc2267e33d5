@@ -1,0 +1,5 @@
+package org.porourke.carshop.model;
+
+public class HibernateVehicle {
+
+}

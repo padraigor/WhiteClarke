@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Say Hello Widget Harness</title>
+
+
+
+<script
+	data-dojo-config="async: 0, dojoBlankHtmlUrl: '/blank.html',
+        packages: [ {
+            name: 'com',
+            location: location.pathname.replace(/\/[^/]+$/, '') + '../../../../..'
+        } ]"
+	src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
+
+
+<script type="text/javascript">
+	require([ "dojo/ready", "com/wcg/example/jsexample/SayHelloWidget", "dojo/domReady!" ], function(ready,
+			SayHelloWidget) {
+		var readyFunction = function() {
+			var widget = new SayHelloWidget({
+			}, "thePlace");
+			widget.startup();
+		};
+
+		ready(readyFunction);
+	});
+</script>
+
+</head>
+
+<body>
+	<div id="thePlace"></div>
+</body>
+</html>

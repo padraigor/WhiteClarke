@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/tieredplan
+END
+TieredPlanSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/tieredplan/TieredPlanSaveService.java
+END
+TieredPlanLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/tieredplan/TieredPlanLoadService.java
+END

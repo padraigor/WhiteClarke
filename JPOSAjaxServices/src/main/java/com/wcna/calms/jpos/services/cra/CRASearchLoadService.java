@@ -1,0 +1,74 @@
+package com.wcna.calms.jpos.services.cra;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.wcg.calms.ajax.common.CalmsAjaxService;
+import com.wcg.calms.service.customer.MainApplicantLoadService;
+import com.wcna.calms.service.common.IConstants;
+import com.wcna.calms.service.customer.IGenericConsumerService;
+
+public class CRASearchLoadService extends MainApplicantLoadService{
+
+		private IGenericConsumerService consumerService;
+		private CalmsAjaxService postLoadService;
+		private String screenCode;
+//		private String origScreenCode = null;
+
+		public String getScreenCode() {
+			String ret;
+			if ("A".equals(this.getAppContainer().getAppTypeCode())
+					&& screenCode != null
+					&& !"Bpm".equals(screenCode.substring(0, 3))) {
+				ret = "Bpm" + screenCode;
+			} else {
+				ret = screenCode;
+			}
+			return ret;
+		}
+
+		public void setScreenCode(String screenCode) {
+			this.screenCode = screenCode;
+		}
+
+		public CRASearchLoadService(IGenericConsumerService consumerService, CalmsAjaxService postLoadService) {
+			super(consumerService);
+			this.postLoadService = postLoadService;
+		}
+
+		public Object invoke(Object object) {
+			HashMap<String, Object> resultMap = new HashMap<String, Object>();
+
+			if (object instanceof Map) {
+
+				String _screenCode = this.getScreenCode();
+				resultMap = (HashMap)super.invoke(object);
+
+				if (postLoadService != null) {
+					resultMap.put("screenCode", _screenCode);
+					resultMap = (HashMap)postLoadService.invoke(resultMap);
+					resultMap.remove("screenCode");
+				}
+
+				if ("A".equals(this.getAppContainer().getAppTypeCode())) {
+					Map tempMap = (Map)resultMap.get(_screenCode);
+					resultMap.put(this.screenCode, tempMap);
+					resultMap.remove(_screenCode);
+				}
+			}
+			return resultMap;
+		}
+
+		@Override
+		public Map getData() {
+			Map ret = super.getData();
+			if (this.postLoadService != null) {
+				ret.put("screenCode", this.getScreenCode());
+				ret.put("isIgnoreDefaults", IConstants.FLAG_YES);
+				this.postLoadService.invoke(ret);
+				ret.remove("screenCode");
+				ret.remove("isIgnoreDefaults");
+			}
+			return ret;
+		}
+}

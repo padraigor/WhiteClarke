@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote
+END
+JPOSQuickQuoteSimulationCalcService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteSimulationCalcService.java
+END
+JPOSChangeCustTypeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSChangeCustTypeService.java
+END
+JPOSQuickQuoteAssetTotalPriceChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetTotalPriceChangeService.java
+END
+JPOSQuickQuoteDocumentLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteDocumentLoadService.java
+END
+JPOSQuickQuoteLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteLoadService.java
+END
+JPOSQuickQuoteSelTPDBCustomerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteSelTPDBCustomerService.java
+END
+JPOSQuickQuoteCustomerDetailLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteCustomerDetailLoadService.java
+END
+JPOSQuickQuoteClearPlansService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteClearPlansService.java
+END
+JPOSQuickQuoteCostRefreshService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteCostRefreshService.java
+END
+JPOSQuickQuoteAssetDefaultValuesVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetDefaultValuesVO.java
+END
+JPOSQuickQuoteAssetSaveFFOService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetSaveFFOService.java
+END
+GetAvailableFinancePlansService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/GetAvailableFinancePlansService.java
+END
+JPOSQuickQuoteAssetOptionsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetOptionsLoadService.java
+END
+JPOSQuickQuoteCalculateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteCalculateService.java
+END
+JPOSQuickQuoteCostInputChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteCostInputChangeService.java
+END
+JPOSQuickQuoteSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteSaveService.java
+END
+StructuredPaymentScreenBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/StructuredPaymentScreenBean.java
+END
+JPOSQuickQuoteAssetCalcFFOTotalService.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetCalcFFOTotalService.java
+END
+JPOSQuickQuoteAssetRentACarUploadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetRentACarUploadService.java
+END
+InitializeNewQuotesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/InitializeNewQuotesService.java
+END
+JPOSQuickQuoteAssetTaxIncludeChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetTaxIncludeChangeService.java
+END
+JPOSQuickQuoteGetCapMonitorValueService.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteGetCapMonitorValueService.java
+END
+GenStructuredProfileService.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/GenStructuredProfileService.java
+END
+JPOSQuickQuoteAssetPartExchangeLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetPartExchangeLoadService.java
+END
+JPOSQuickQuotePlanRefreshService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuotePlanRefreshService.java
+END
+JPOSQuickQuoteAssetVariantChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetVariantChangeService.java
+END
+JPOSQuickQuoteTaxPointDateChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteTaxPointDateChangeService.java
+END
+JPOSQuickQuoteAssetLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetLoadService.java
+END
+JPOSQuickQuoteCopyAssetDetailsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteCopyAssetDetailsService.java
+END
+JPOSQuickQuoteInputVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteInputVO.java
+END
+JPOSQuickQuoteSimulationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteSimulationService.java
+END
+JPOSQuickQuoteCustomerVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteCustomerVO.java
+END
+JPOSQuickQuoteAssetPartExchangeSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetPartExchangeSaveService.java
+END
+AdjustStructuredProfileService.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/AdjustStructuredProfileService.java
+END
+RefreshPlansOnCustTypeChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/RefreshPlansOnCustTypeChangeService.java
+END
+JPOSQuickQuoteDocumentHandleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteDocumentHandleService.java
+END
+JPOSQuickQuoteAssetOptionsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetOptionsService.java
+END
+JPOSQuickQuoteAssetSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetSaveService.java
+END
+JPOSQuickQuoteAssetRefreshService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetRefreshService.java
+END
+JPOSQuoteUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuoteUtil.java
+END
+JPOSQuickQuotePlanChangeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuotePlanChangeService.java
+END
+JPOSSettlementContainerVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSSettlementContainerVO.java
+END
+GetMoreStructuredPaymentsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/GetMoreStructuredPaymentsService.java
+END
+JPOSBasePlanAlterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSBasePlanAlterService.java
+END
+JPOSQuickQuoteAssetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/JPOSQuickQuoteAssetVO.java
+END
+UpgradeQuoteSaveRequestWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/quote/UpgradeQuoteSaveRequestWrapper.java
+END

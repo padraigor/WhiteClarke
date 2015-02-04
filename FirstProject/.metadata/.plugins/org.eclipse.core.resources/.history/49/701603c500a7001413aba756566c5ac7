@@ -1,0 +1,54 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.porourke.carshop.model.ModelInterface;
+import org.porourke.carshop.model.VehicleInterface;
+
+public class HibernateModelTest {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Test
+	public void testNoParameterConstructor() {
+		ModelInterface model = new HibernateModel();
+		
+		assertEquals(-1,model.getId());
+		assertEquals("",model.getName());
+		assertEquals(null,model.getMake());
+		assertEquals(new ArrayList<VehicleInterface>().getClass(),model.getVehicles().getClass());
+	}
+	
+	@Test
+	public void testNoIdConstructor() {
+		ModelInterface model = new HibernateModel(new HashSet<VehicleInterface>(),new HibernateMake(),"TestName");
+		
+		assertEquals(-1,model.getId());
+		assertEquals("TestName",model.getName());
+		assertEquals("",model.getMake().getName());
+		assertEquals(new HashSet<VehicleInterface>().getClass(),model.getVehicles().getClass());
+	}
+	
+	@Test
+	public void testNoAllParameterConstructor() {
+		ModelInterface model = new HibernateModel(101,new HashSet<VehicleInterface>(),new HibernateMake(),"TestName");
+		
+		assertEquals(101,model.getId());
+		assertEquals("TestName",model.getName());
+		assertEquals("",model.getMake().getName());
+		assertEquals(new HashSet<VehicleInterface>().getClass(),model.getVehicles().getClass());
+	}
+
+}

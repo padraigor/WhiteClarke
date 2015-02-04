@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin
+END
+JPOSCPIGroupListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSCPIGroupListLoadService.java
+END
+JPOSGroupProductDetailsDeleteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSGroupProductDetailsDeleteService.java
+END
+JPOSPackageListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSPackageListLoadService.java
+END
+JPOSProductSheetSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSProductSheetSaveService.java
+END
+JPOSPackageVersionListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSPackageVersionListLoadService.java
+END
+JPOSBrandProductDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSBrandProductDetailsLoadService.java
+END
+JPOSPlanDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSPlanDetailsLoadService.java
+END
+JPOSPackageDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSPackageDetailsLoadService.java
+END
+JPOSGroupProductDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSGroupProductDetailsLoadService.java
+END
+JPOSProductSheetValidDatesLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSProductSheetValidDatesLoadService.java
+END
+JPOSDealerProductDetailsAddService.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSDealerProductDetailsAddService.java
+END
+JPOSPlanDetailsSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSPlanDetailsSaveService.java
+END
+GetBaseRateSumService.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/GetBaseRateSumService.java
+END
+JPOSPackageDetailsSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSPackageDetailsSaveService.java
+END
+JPOSCSVUploadServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSCSVUploadServlet.java
+END
+JPOSProductSheetGroupLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSProductSheetGroupLoadService.java
+END
+JPOSPlanListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSPlanListLoadService.java
+END
+JPOSDealerProductDetailsDeleteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSDealerProductDetailsDeleteService.java
+END
+JPOSRuleGroupDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSRuleGroupDetailsLoadService.java
+END
+JPOSBrandProductBrandListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSBrandProductBrandListLoadService.java
+END
+JPOSProductSheetDeleteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSProductSheetDeleteService.java
+END
+JPOSCPIGroupDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSCPIGroupDetailsLoadService.java
+END
+JPOSDealerProductDetailsLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSDealerProductDetailsLoadService.java
+END
+JPOSGroupProductGroupListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSGroupProductGroupListLoadService.java
+END
+JPOSBrandProductDetailsAddService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSBrandProductDetailsAddService.java
+END
+JPOSDealerProductDealerListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSDealerProductDealerListLoadService.java
+END
+JPOSRuleGroupDetailsSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSRuleGroupDetailsSaveService.java
+END
+JPOSProductSheetLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSProductSheetLoadService.java
+END
+JPOSGroupProductDetailsAddService.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSGroupProductDetailsAddService.java
+END
+JPOSCPIGroupDetailsSaveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSCPIGroupDetailsSaveService.java
+END
+JPOSBrandProductDetailsDeleteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSBrandProductDetailsDeleteService.java
+END
+JPOSRuleGroupListLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/admin/JPOSRuleGroupListLoadService.java
+END

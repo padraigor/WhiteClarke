@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vehicleeligibility
+END
+VehicleEligibilityLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vehicleeligibility/VehicleEligibilityLoadService.java
+END
+VehicleEligibilityGetDetailService.java
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vehicleeligibility/VehicleEligibilityGetDetailService.java
+END
+VehicleEligibilityUploadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/vehicleeligibility/VehicleEligibilityUploadService.java
+END

@@ -1,0 +1,97 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.*;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.porourke.carshop.model.ModelInterface;
+import org.porourke.carshop.model.VehicleInterface;
+
+public class HibernateVehicleTest {
+
+	@Test
+	public void testNoParameterConstructor() {
+		VehicleInterface vehicle = new HibernateVehicle();
+		
+		assertEquals(-1,	vehicle.getId());
+		assertEquals("",	vehicle.getReg());
+		assertEquals(null,	vehicle.getModel());
+		assertEquals("",	vehicle.getColour());
+		assertEquals(-1,	vehicle.getYear());
+		assertEquals(-1,	vehicle.getEngSizeCC());
+	}
+	@Test
+	public void testAllParamertersButIdConstructor() {
+		VehicleInterface vehicle = new HibernateVehicle("XYZ123",null,"Red",1984,1600);
+		
+		assertEquals(-1,		vehicle.getId());
+		assertEquals("XYZ123",	vehicle.getReg());
+		assertEquals(null,		vehicle.getModel());
+		assertEquals("Red",		vehicle.getColour());
+		assertEquals(1984,		vehicle.getYear());
+		assertEquals(1600,		vehicle.getEngSizeCC());
+	}
+	@Test
+	public void testAllParameterConstructor() {
+		VehicleInterface vehicle = new HibernateVehicle(100,"XYZ123",null,"Red",1984,1600);
+		
+		assertEquals(100,		vehicle.getId());
+		assertEquals("XYZ123",	vehicle.getReg());
+		assertEquals(null,		vehicle.getModel());
+		assertEquals("Red",		vehicle.getColour());
+		assertEquals(1984,		vehicle.getYear());
+		assertEquals(1600,		vehicle.getEngSizeCC());
+	}
+	@Test
+	public void testGetAndSetId() {
+		VehicleInterface vehicle = new HibernateVehicle();
+		
+		vehicle.setId(100);
+		assertEquals(100,	vehicle.getId());
+	}
+	@Test
+	public void testGetAndSetReg() {
+		VehicleInterface vehicle = new HibernateVehicle();
+		
+		vehicle.setReg("ACB789");
+		assertEquals("ACB789",vehicle.getReg());		
+	}
+	@Test
+	public void testGetAndSetModel() {
+		VehicleInterface vehicle = new HibernateVehicle();
+		ModelInterface model = new HibernateModel();
+		model.setName("TestModel");
+		
+		vehicle.setModel(model);
+		
+		assertEquals("TestModel", vehicle.getModel().getName());
+		//Check Back Connection. Check vehicle.model.vehicles.contains(model);
+		System.out.println(vehicle.getModel().getVehicles());
+		
+		assertTrue(vehicle.getModel().getVehicles().contains(vehicle));
+		
+	}
+	@Test
+	public void testGetAndSetColour() {
+		VehicleInterface vehicle = new HibernateVehicle();
+		
+		vehicle.setColour("Blue");
+		assertEquals("Blue",vehicle.getColour());
+	}
+	@Test
+	public void testGetAndSetYear() {
+		VehicleInterface vehicle = new HibernateVehicle();
+		
+		vehicle.setYear(1984);
+		assertEquals(1984,vehicle.getYear());
+	}
+	@Test
+	public void testGetAndSetEngSizeCC() {
+		VehicleInterface vehicle = new HibernateVehicle();
+		
+		vehicle.setEngSizeCC(1600);
+		assertEquals(1600,vehicle.getEngSizeCC());
+	}
+
+}

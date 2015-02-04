@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/test/java/com/wcna/calms/jpos/services/cra
+END
+GenericMessageMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/test/java/com/wcna/calms/jpos/services/cra/GenericMessageMatcher.java
+END
+AdHocCraSearchSaveTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/test/java/com/wcna/calms/jpos/services/cra/AdHocCraSearchSaveTest.java
+END
+CraProposalLoadParametersTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/test/java/com/wcna/calms/jpos/services/cra/CraProposalLoadParametersTest.java
+END

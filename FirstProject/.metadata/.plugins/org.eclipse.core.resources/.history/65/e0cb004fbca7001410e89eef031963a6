@@ -1,0 +1,5 @@
+package org.porourke.dozer;
+
+public class Employee {
+
+}

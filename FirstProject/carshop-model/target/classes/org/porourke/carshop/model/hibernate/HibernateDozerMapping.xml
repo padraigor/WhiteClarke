@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<configuration>
+		<stop-on-errors>true</stop-on-errors>
+	    <date-format>MM/dd/yyyy HH:mm</date-format>
+	    <wildcard>true</wildcard>
+	</configuration>
+
+	<mapping map-id="a">
+		<class-a>org.porourke.dozer.model.MakeInterface</class-a>
+		<class-b>org.porourke.dozer.model.hibernate.HibernateMake.</class-b>
+		<field>
+			<a>id</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>models</a>
+			<b>models</b>
+		</field>
+		<field>
+			<a>name</a>
+			<b>name</b>
+		</field>
+	</mapping>          
+</mappings>  

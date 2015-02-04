@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/dealerproduct
+END
+DealerProductVapAssociationLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/dealerproduct/DealerProductVapAssociationLoadService.java
+END
+SaveDealerProductVapAssociations.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/dealerproduct/SaveDealerProductVapAssociations.java
+END
+FinancialProductSummaryLoadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/CALMSFMO/!svn/ver/101284/CALMS/branches/7.2.3.p01-TFS-Demo/JPOS/JPOSAjaxServices/src/main/java/com/wcna/calms/jpos/services/dealerproduct/FinancialProductSummaryLoadService.java
+END

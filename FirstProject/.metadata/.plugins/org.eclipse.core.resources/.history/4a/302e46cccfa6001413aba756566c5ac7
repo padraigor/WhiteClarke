@@ -1,0 +1,30 @@
+package org.porourke.carshop.model;
+
+import java.util.Collection;
+import java.util.Set;
+
+import org.porourke.carshop.model.vechicles.Model;
+
+public interface MakeInterface {
+
+	public abstract void addModel(Model model);
+
+	public abstract int getId();
+
+	public abstract void setId(int id);
+
+	public abstract Collection<Model> getModels();
+
+	public abstract void setModels(Collection<Model> models);
+
+	public abstract String getName();
+
+	public abstract void setName(String name);
+
+	public abstract int hashCode();
+
+	public abstract boolean equals(Object obj);
+
+	public abstract String toString();
+
+}

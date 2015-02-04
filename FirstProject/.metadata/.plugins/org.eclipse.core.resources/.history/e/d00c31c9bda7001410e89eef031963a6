@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<mappings>
+		<mapping map-id="a">
+			<class-a>org.porourke.dozer.Employee</class-a>
+			<class-b>org.porourke.dozer.Address</class-b>
+			<field>
+				<a>streetNumber</a>
+				<b>streetNumber</b>
+			</field>
+			<field>
+				<a>city</a>
+				<b>city</b>
+			</field>
+			<field>
+				<a>state</a>
+				<b>state</b>
+			</field>
+			<field>
+				<a>country</a>
+				<b>country</b>
+			</field>
+		</mapping>
+	</mappings>
