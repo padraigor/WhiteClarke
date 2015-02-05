@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
@@ -23,10 +24,10 @@ public class Model {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id; // Unique Identifer
 
-	@OneToMany //@Transient
+	@OneToMany 
 	private Collection<Vehicle> vehicles; // List of Vehicles with this
 	
-	@ManyToOne
+	@ManyToOne @JoinColumn(name="make_id")
 	//@Column(name = "make_id")
 	private Make make; // Car make for this model
 	
@@ -93,11 +94,6 @@ public class Model {
 		this.name = name;
 	}
 
-	public void setMake(Make make) {
-		this.make = make;
-		make.addModel(this);// ? check
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -136,6 +132,11 @@ public class Model {
 	public String toString() {
 		return "Model [id=" + id + ", vehicles=" + vehicles
 				+ ", make=" + make + ", name=" + name + "]";
+	}
+
+	public void setMake(Make make) {
+		this.make = make;
+		make.addModel(this);
 	}
 
 

@@ -23,7 +23,7 @@ public class Make{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id; // Unique Identifier
 
-	@OneToMany
+	@OneToMany 
 	//@JoinTable(name="Make_Model", joinColumns=@JoinColumn(name="id"),inverseJoinColumns=@JoinColumn(name="make_id"))
 	private Collection<Model> models; // List of Models for this Make
 	

@@ -23,8 +23,7 @@ public class Vehicle{
 		this(-1, "", null, "", -1, -1);
 	}
 
-	public Vehicle(String reg, Model model, String colour,
-			int year, int engSizeCC) {
+	public Vehicle(String reg, Model model, String colour, int year, int engSizeCC) {
 		this(-1, reg, model, colour, year, engSizeCC);
 	}
 

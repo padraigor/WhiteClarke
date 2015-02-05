@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HibernateVehicleServiceTest" project="carshop-model" tests="9" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" incomplete="true">
+    <testcase name="TestDeepSaveModelNotNull" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" time="4.331"/>
+    <testcase name="testVehicleServiceConstructor" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" time="10.274"/>
+    <testcase name="testVehicleServicegetModelsbyId" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" time="16.119"/>
+    <testcase name="testVehicleServicegetMakesbyId" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" incomplete="true"/>
+    <testcase name="TestDeepSaveModelPointsBackToVehicle" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" incomplete="true"/>
+    <testcase name="TestDeepSaveMakeEquals" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" incomplete="true"/>
+    <testcase name="TestDeepSaveMakePointsBackToModel" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" incomplete="true"/>
+    <testcase name="TestDeepSaveModelsEqual" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" incomplete="true"/>
+    <testcase name="testVehicleServicegetVehiclesbyId" classname="org.porourke.carshop.model.hibernate.HibernateVehicleServiceTest" incomplete="true"/>
+  </testsuite>
+</testrun>

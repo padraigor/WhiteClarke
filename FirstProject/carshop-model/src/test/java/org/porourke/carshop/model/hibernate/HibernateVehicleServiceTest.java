@@ -4,21 +4,24 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.porourke.carshop.model.VehiclesInterface;
 
 public class HibernateVehicleServiceTest {
-	VehicleService vehicleService;
+	VehiclesInterface vehicleService;
 	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 	
 	@Before
 	public void setup(){
-		vehicleService = new VehicleService(sessionFactory);
+		vehicleService = new HibernateVehicleService(sessionFactory);
 	}
 	@After 
 	public void finish(){
@@ -37,8 +40,6 @@ public class HibernateVehicleServiceTest {
 		
 		assertTrue(result.contains(make));
 		assertTrue(result.contains(make2));
-		
-	
 	}
 
 	@Test
@@ -55,8 +56,6 @@ public class HibernateVehicleServiceTest {
 	
 		assertEquals("Make1", result1.getName());
 		assertEquals("Make2", result2.getName());
-		
-
 	}
 	
 	@Test
@@ -85,17 +84,23 @@ public class HibernateVehicleServiceTest {
 		Vehicle vehicle = new Vehicle();	
 		vehicle.setReg("ABC123");
 		
-		Vehicle vehicle2 = new Vehicle();	
-		vehicle2.setReg("XYZ123");
+		//Setup the make and model
+		Model model = new Model(new HashSet<Vehicle>(Arrays.asList(vehicle)), null, "TestModelName");
+		Make make = new Make(new HashSet<Model>(Arrays.asList(model)),"TestMakeName");
+		model.setMake(make);
 
 		vehicleService.saveVehicle(vehicle);
-		vehicleService.saveVehicle(vehicle2);
 		
-		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
-		Vehicle result2 = vehicleService.getVehicleById(vehicle2.getId());
-	
-		assertEquals("ABC123", result1.getReg());
-		assertEquals("XYZ123", result2.getReg());
+		Vehicle result = vehicleService.getVehicleById(vehicle.getId());
+		
+		assertEquals("ABC123", result.getReg());
+		
+		//check make and model and back connections for vehicle
+		assertEquals("TestModelName", result.getModel().getName());
+		assertEquals("ABC123",((Vehicle)(result.getModel().getVehicles().toArray()[0])).getReg());
+		
+		assertEquals("TestMakeName", result.getModel().getMake().getName());
+		assertEquals("TestModelName",((Model)(result.getModel().getMake().getModels().toArray()[0])).getName());
 		
 	}
 	
