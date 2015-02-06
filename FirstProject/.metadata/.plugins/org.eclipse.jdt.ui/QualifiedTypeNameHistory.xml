@@ -23,12 +23,10 @@
 <fullyQualifiedTypeName name="org.apache.commons.lang3.builder.ToStringBuilder"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.builder.ToStringStyle"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="org.hibernate.mapping.Set"/>
 <fullyQualifiedTypeName name="javax.persistence.Transient"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="org.porourke.carshop.model.MakeInterface"/>
 <fullyQualifiedTypeName name="org.porourke.carshop.model.VehicleInterface"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
@@ -47,4 +45,6 @@
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="org.porourke.carshop.model.hibernate.Model"/>
 <fullyQualifiedTypeName name="org.porourke.carshop.model.VehiclesInterface"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

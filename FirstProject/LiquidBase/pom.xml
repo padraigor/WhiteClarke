@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.porourke.examples.liquibase</groupId>
+  <artifactId>LiquidBase</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  	<dependencies>
+       <dependency>
+           <groupId>mysql</groupId>
+           <artifactId>mysql-connector-java</artifactId>
+           <version>5.1.17</version>
+       </dependency>
+       <dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <version>1.4.185</version>
+		</dependency>
+       
+	</dependencies>
+    
+	 <build>
+
+      <plugins>
+      	<plugin>
+	      <groupId>org.liquibase</groupId>
+	      <artifactId>liquibase-maven-plugin</artifactId>
+	      <version>3.0.5</version>
+	      
+	      <configuration>
+	        <changeLogFile>src/main/resources/DatabaseChangeLog.xml</changeLogFile>
+	          <driver>com.mysql.jdbc.H2</driver>
+	          <url>"C:\Projects\Examples\LiquidBase\src\main\resources"</url>
+	          <username>porourke</username>
+	          <password>Password123</password>
+	        </configuration>
+	      <executions>
+	        <execution>
+	          <phase>process-resources</phase>
+	          <goals>
+	            <goal>update</goal>
+	          </goals>
+	        </execution>
+	      </executions>
+    	</plugin>
+    	</plugins>
+    	
+    </build>
+    
+</project>

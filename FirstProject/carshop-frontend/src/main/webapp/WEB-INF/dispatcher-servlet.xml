@@ -45,7 +45,7 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean class="org.porourke.carshop.model.hibernate.VehicleService" id="VehiclesInterface">
+	<bean class="org.porourke.carshop.model.hibernate.HibernateVehicleServiceWithDummyTestData" id="VehiclesInterface">
 		<constructor-arg ref="sessionFactory"></constructor-arg>
 	</bean>
 </beans>

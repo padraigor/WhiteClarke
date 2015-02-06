@@ -1,0 +1,12 @@
+package org.porourke.carshop.model.hibernate;
+
+import org.hibernate.SessionFactory;
+
+public class HibernateVehicleServiceWithDummyTestData {
+
+	@Override
+	public HibernateVehicleServiceWithDummyTestData(SessionFactory sessionFactory){
+		super();
+	}
+	
+}

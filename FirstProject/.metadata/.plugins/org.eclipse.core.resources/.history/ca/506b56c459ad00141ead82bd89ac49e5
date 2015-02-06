@@ -1,0 +1,212 @@
+package org.porourke.carshop.model.hibernate;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.porourke.carshop.model.VehiclesInterface;
+
+public class HibernateVehicleServiceTest {
+	VehiclesInterface vehicleService;
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	
+	@Before
+	public void setup(){
+		vehicleService = new HibernateVehicleService(sessionFactory);
+	}
+	@After 
+	public void finish(){
+		vehicleService.destroy();
+	}
+	@Test
+	public void testVehicleServiceConstructor() {	
+		
+		Make make = new Make();	make.setName("Make1"); 
+		Make make2 = new Make();make2.setName("Make2");
+
+		vehicleService.saveMake(make);
+		vehicleService.saveMake(make2);
+		
+		Collection<Make> result = vehicleService.getMakes();
+		
+		assertTrue(result.contains(make));
+		assertTrue(result.contains(make2));
+	}
+
+	@Test
+	public void testVehicleServicegetMakesbyId() {
+		
+		Make make = new Make();		make.setName("Make1"); 	
+		Make make2 = new Make();	make2.setName("Make2");
+
+		vehicleService.saveMake(make);
+		vehicleService.saveMake(make2);
+		
+		Make result1 = vehicleService.getMakeById(make.getId());
+		Make result2 = vehicleService.getMakeById(make2.getId());
+	
+		assertEquals("Make1", result1.getName());
+		assertEquals("Make2", result2.getName());
+	}
+	
+	@Test
+	public void testVehicleServicegetModelsbyId() {
+		
+		Model model = new Model();	
+		model.setName("Model1"); 	
+		
+		Model model2 = new Model();	
+		model2.setName("Model2");
+
+		vehicleService.saveModel(model);
+		vehicleService.saveModel(model2);
+		
+		Model result1 = vehicleService.getModelById(model.getId());
+		Model result2 = vehicleService.getModelById(model2.getId());
+	
+		assertEquals("Model1", result1.getName());
+		assertEquals("Model2", result2.getName());
+
+	}
+	
+	@Test
+	public void testVehicleServicegetVehiclesbyId() {
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		
+		//Setup the make and model
+		Model model = new Model(new HashSet<Vehicle>(Arrays.asList(vehicle)), null, "TestModelName");
+		Make make = new Make(new HashSet<Model>(Arrays.asList(model)),"TestMakeName");
+		model.setMake(make);
+
+		vehicleService.saveVehicle(vehicle);
+		
+		Vehicle result = vehicleService.getVehicleById(vehicle.getId());
+		
+		assertEquals("ABC123", result.getReg());
+		
+		//check make and model and back connections for vehicle
+		assertEquals("TestModelName", result.getModel().getName());
+		assertEquals("ABC123",((Vehicle)(result.getModel().getVehicles().toArray()[0])).getReg());
+		
+		assertEquals("TestMakeName", result.getModel().getMake().getName());
+		assertEquals("TestModelName",((Model)(result.getModel().getMake().getModels().toArray()[0])).getName());
+		
+	}
+	
+	@Test
+	public void TestDeepSaveModelNotNull() {
+		Make make = new Make();
+		make.setName("Lada");
+		
+		Model model= new Model();
+		model.setName("BrokenCar");
+		make.addModel(model);
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		vehicle.setModel(model);
+
+		vehicleService.saveVehicle(vehicle);
+		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
+		
+		assertNotNull(result1.getModel());
+
+	}
+	
+	@Test
+	public void TestDeepSaveModelsEqual() {
+		Make make = new Make();
+		make.setName("Lada");
+		
+		Model model= new Model();
+		model.setName("BrokenCar");
+		make.addModel(model);
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		vehicle.setModel(model);
+
+		vehicleService.saveVehicle(vehicle);
+		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
+		
+		
+		assertEquals(model,result1.getModel());
+	}
+	
+	@Test
+	public void TestDeepSaveMakeEquals() {
+		Make make = new Make();
+		make.setName("Lada");
+		
+		Model model= new Model();
+		model.setName("BrokenCar");
+		make.addModel(model);
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		vehicle.setModel(model);
+
+		vehicleService.saveVehicle(vehicle);
+		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
+		
+		assertEquals(make,result1.getModel().getMake());
+	}
+	
+	@Test
+	public void TestDeepSaveModelPointsBackToVehicle() {
+		Make make = new Make();
+		make.setName("Lada");
+		
+		Model model= new Model();
+		model.setName("BrokenCar");
+		make.addModel(model);
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		vehicle.setModel(model);
+
+		vehicleService.saveVehicle(vehicle);
+		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
+		
+		assertTrue(result1.getModel().getVehicles().contains(vehicle));
+	}
+	
+	@Test
+	public void TestDeepSaveMakePointsBackToModel() {
+		Make make = new Make();
+		make.setName("Lada");
+		
+		Model model= new Model();
+		model.setName("BrokenCar");
+		make.addModel(model);
+		
+		Vehicle vehicle = new Vehicle();	
+		vehicle.setReg("ABC123");
+		vehicle.setModel(model);
+
+		vehicleService.saveVehicle(vehicle);
+		Vehicle result1 = vehicleService.getVehicleById(vehicle.getId());
+		
+		assertTrue(result1.getModel().getMake().getModels().contains(model));
+	}
+	@Test
+	public void TestDummyData() {
+		System.out.println("Here");
+		vehicleService = new HibernateVehicleServiceWithDummyTestData(sessionFactory);
+	
+		System.out.println(vehicleService.getVehicleById(1));
+	}
+	
+
+}

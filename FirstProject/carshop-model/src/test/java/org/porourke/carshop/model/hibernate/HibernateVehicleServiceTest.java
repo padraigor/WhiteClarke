@@ -200,9 +200,14 @@ public class HibernateVehicleServiceTest {
 		
 		assertTrue(result1.getModel().getMake().getModels().contains(model));
 	}
+	@Test
+	public void TestDummyData() {
+		
+		vehicleService.destroy();
+		vehicleService = new HibernateVehicleServiceWithDummyTestData(sessionFactory);
 	
-	
-	
+		System.out.println(vehicleService.getVehicleById(1));
+	}
 	
 
 }

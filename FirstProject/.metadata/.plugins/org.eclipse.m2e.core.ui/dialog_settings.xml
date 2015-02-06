@@ -37,6 +37,12 @@
 			<item value="maven-repository.com/artifact/co.ntier/spring-mvcarchetype/1.0.2"/>
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="470" key="height"/>
+		<item value="480" key="width"/>
+		<item value="227" key="y"/>
+		<item value="2640" key="x"/>
+	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
 			<item value="C:\Projects\workspace\FirstProject\carshop-model\pom.xml"/>
@@ -52,12 +58,6 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
-	</section>
-	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
-		<item value="470" key="height"/>
-		<item value="480" key="width"/>
-		<item value="227" key="y"/>
-		<item value="2640" key="x"/>
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="groupId">
