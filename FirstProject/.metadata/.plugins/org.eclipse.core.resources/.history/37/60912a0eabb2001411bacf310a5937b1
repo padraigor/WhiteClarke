@@ -1,0 +1,5 @@
+package org.porourke.carshop.frontend;
+
+public class CarsRestController {
+
+}

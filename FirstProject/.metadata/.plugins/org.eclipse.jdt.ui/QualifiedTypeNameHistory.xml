@@ -40,11 +40,12 @@
 <fullyQualifiedTypeName name="javax.persistence.Query"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
 <fullyQualifiedTypeName name="org.junit.After"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="org.porourke.carshop.model.hibernate.Model"/>
-<fullyQualifiedTypeName name="org.porourke.carshop.model.VehiclesInterface"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.porourke.carshop.model.VehiclesInterface"/>
+<fullyQualifiedTypeName name="org.porourke.carshop.model.hibernate.HibernateVehicleServiceWithDummyTestData"/>
+<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
 </qualifiedTypeNameHistroy>

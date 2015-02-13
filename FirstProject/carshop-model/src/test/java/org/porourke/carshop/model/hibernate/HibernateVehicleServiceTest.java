@@ -15,6 +15,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.porourke.carshop.model.VehiclesInterface;
 
+
+@Transactional
 public class HibernateVehicleServiceTest {
 	VehiclesInterface vehicleService;
 	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();

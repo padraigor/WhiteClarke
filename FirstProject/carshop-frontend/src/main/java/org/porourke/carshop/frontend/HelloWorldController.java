@@ -9,11 +9,13 @@ import org.porourke.carshop.model.hibernate.Model;
 import org.porourke.carshop.model.hibernate.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
  
 @Controller
+@Transactional
 public class HelloWorldController {
 	String message = "Welcome to Spring MVC!";
 	VehiclesInterface vehicleInterface;
@@ -21,27 +23,12 @@ public class HelloWorldController {
 	public HelloWorldController(VehiclesInterface vehicleInterface) {
 		super();
 		this.vehicleInterface = vehicleInterface;
-		setupTestingData();
-	}
-
-	private void setupTestingData() {
-		Make make = new Make();
-		make.setName("Lada");
-		
-		Model model= new Model();
-		model.setName("BrokenCar");
-		make.addModel(model);
-		
-		Vehicle vehicle = new Vehicle();	
-		vehicle.setReg("ABC123");
-		vehicle.setModel(model);
-		
-		vehicleInterface.saveVehicle(vehicle);
 	}
 
 	@RequestMapping("/hello")
 	public ModelAndView showMessage(
-			@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
+		
+		@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
 		System.out.println("in controller");
  
 		ModelAndView mv = new ModelAndView("helloworld");
@@ -50,9 +37,17 @@ public class HelloWorldController {
 		return mv;
 	}
 	
+	@RequestMapping("/JSONTestJSP")
+	public ModelAndView showMessage2(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
+		System.out.println("in controller for JSONTestJSP");
+ 
+		ModelAndView mv = new ModelAndView("JSONTestJSP");
+		return mv;
+	}
+	
 	@RequestMapping("/availableCars")
 	public ModelAndView availbleCars(
-			@RequestParam(value = "selectedMakeId", required = false, defaultValue = "1") String makeSelectedId,
+			@RequestParam(value = "selectedMakeId",  required = false, defaultValue = "1") String makeSelectedId,
 			@RequestParam(value = "selectedModelId", required = false, defaultValue = "1") String modelSelectedId){
  
 		
@@ -64,6 +59,9 @@ public class HelloWorldController {
 		
 		//List of Models
 		int makeSelectedIdAsInt = Integer.parseInt(makeSelectedId); 
+		
+		System.out.println(makeSelectedIdAsInt);
+		
 		List<Model> modelsList = new ArrayList<Model>(vehicleInterface.getMakeById(makeSelectedIdAsInt).getModels());  
 		mv.addObject("models", modelsList);
 		mv.addObject("lastSelectedModelId",modelSelectedId);
@@ -78,6 +76,13 @@ public class HelloWorldController {
 		{	vehicleList = new ArrayList<Vehicle>(modelsList.get(0).getVehicles());
 		}
 		mv.addObject("vehicles",  vehicleList);
+		
+		return mv;
+	}
+	
+	@RequestMapping("/testDOJO")
+	public ModelAndView TestDOJO(){
+		ModelAndView mv = new ModelAndView("TestDOJO");
 		
 		return mv;
 	}

@@ -1,0 +1,69 @@
+package org.porourke.carshop.model.hibernate;
+
+import java.util.HashSet;
+
+import org.hibernate.SessionFactory;
+
+public class HibernateVehicleServiceWithDummyTestData extends HibernateVehicleService{
+
+	public HibernateVehicleServiceWithDummyTestData(SessionFactory sessionFactory){
+		super(sessionFactory);
+		
+		Make voltsWagen = new Make(null,"Voltswagen");				
+		Make ford  		= new Make(null,"Ford");						
+		Make toyota  	= new Make(null,"Toyota");					
+		Make lada  		= new Make(null,"Lada");						 
+		Make BAE  		= new Make(null,"BAE");						
+		
+		Model passat_B6 = new Model(null,voltsWagen,"Passat B6"); 	
+		Model golf 		= new Model(null,voltsWagen,"Golf"); 		
+		Model polo 		= new Model(null,voltsWagen,"Polo"); 		
+		Model fiesta_ST = new Model(null,ford,		"Fiesta_ST"); 	
+		Model focus 	= new Model(null,ford,		"Focus"); 		
+		Model mustang 	= new Model(null,ford,		"Mustang"); 	
+		Model hilux 	= new Model(null,toyota,	"Hilux"); 		
+		Model prius 	= new Model(null,toyota,	"Prius"); 		
+		Model landCrusier= new Model(null,toyota,	"LandCruiser");	
+		Model yarris	= new Model(null,toyota,	"Yarris"); 		
+		Model pria 		= new Model(null,lada,		"Pria"); 		
+		Model tank 		= new Model(null,BAE,		"Tank"); 		
+		
+		saveVehicle(new Vehicle());
+		System.out.println("Here X");
+		
+		
+		saveVehicle(new Vehicle("ABC123", passat_B6	, "Black", 	2014, 2104)); 			
+		saveVehicle(new Vehicle("ABD123", passat_B6	, "Red", 	2013, 2104));	
+		saveVehicle(new Vehicle("ABE123", passat_B6	, "White", 	2012, 2104));	
+		saveVehicle(new Vehicle("ABF123", passat_B6	, "Black", 	2011, 2104));	
+		saveVehicle(new Vehicle("ABG123", passat_B6	, "Blue", 	2014, 2104));	
+		saveVehicle(new Vehicle("ABH123", golf	   	, "Black", 	2013, 1605));	
+		saveVehicle(new Vehicle("ABI123", golf		, "Red", 	2012, 1605));		
+		saveVehicle(new Vehicle("ABJ123", golf		, "Black", 	2011, 1605));	
+		saveVehicle(new Vehicle("ABK123", polo		, "Black", 	2010, 995));	
+		saveVehicle(new Vehicle("ABL123", polo		, "Red", 	2014, 995));	
+		saveVehicle(new Vehicle("ABM123", fiesta_ST	, "Black", 	2013, 1005));		
+		saveVehicle(new Vehicle("ABN123", fiesta_ST	, "Black", 	2012, 998));			
+		saveVehicle(new Vehicle("ABO123", fiesta_ST	, "Red", 	2011, 998));			
+		saveVehicle(new Vehicle("ABP123", fiesta_ST	, "White", 	2014, 998));			
+		saveVehicle(new Vehicle("ABQ123", focus		, "White", 	2013, 1605));			
+		saveVehicle(new Vehicle("ABR123", focus		, "White", 	2012, 1605));			
+		saveVehicle(new Vehicle("ABS123", focus		, "Black", 	2011, 1605));			
+		saveVehicle(new Vehicle("ABT123", mustang	, "Red", 	2014, 2300));			
+		saveVehicle(new Vehicle("ABU123", mustang	, "Red", 	2013, 2300));			
+		saveVehicle(new Vehicle("ABV123", mustang	, "Black", 	2013, 2300));			
+		saveVehicle(new Vehicle("ABW123", hilux		, "Black", 	2012, 2200));			
+		saveVehicle(new Vehicle("ABX123", hilux		, "White", 	2012, 2200));			
+		saveVehicle(new Vehicle("ABY123", hilux		, "White", 	2011, 2400));		
+		saveVehicle(new Vehicle("ABZ123", prius		, "Red", 	2014, 1800));			
+		saveVehicle(new Vehicle("ABC124", prius		, "Red", 	2014, 1800));		
+		saveVehicle(new Vehicle("ABC125", prius		, "Black", 	2013, 1600));			
+		saveVehicle(new Vehicle("ABC126", landCrusier,"Black", 	2013, 2300));	
+		saveVehicle(new Vehicle("ABC127", yarris 	, "White", 	2012, 1005));	
+		saveVehicle(new Vehicle("ABC128", yarris 	, "Red", 	2012, 1005));		
+		saveVehicle(new Vehicle("ABC129", yarris 	, "Black", 	2011, 1005));	
+		saveVehicle(new Vehicle("ABC130", pria		, "Black", 	1975, 1500));				
+		saveVehicle(new Vehicle("ABC133", tank		, "Green", 	2013, 60000));	
+	}
+	
+}

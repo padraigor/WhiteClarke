@@ -16,6 +16,8 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity(name = "Make")
 public class Make{
@@ -23,6 +25,7 @@ public class Make{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id; // Unique Identifier
 
+	@JsonIgnore
 	@OneToMany 
 	//@JoinTable(name="Make_Model", joinColumns=@JoinColumn(name="id"),inverseJoinColumns=@JoinColumn(name="make_id"))
 	private Collection<Model> models; // List of Models for this Make

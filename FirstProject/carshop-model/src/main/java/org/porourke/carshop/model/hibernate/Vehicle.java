@@ -1,5 +1,8 @@
 package org.porourke.carshop.model.hibernate;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,6 +38,34 @@ public class Vehicle{
 		this.colour = colour;
 		this.year = year;
 		this.engSizeCC = engSizeCC;
+	}
+	public String toJSON(){
+		String ans = "{";
+		
+		ans = ans + "\"id\":\"" 		+ this.getId() 							+ "\",";
+		ans = ans + "\"reg\":\"" 		+ this.getReg()							+ "\",";
+		if(this.getModel() != null){	
+			ans = ans + "\"model\":\"" 	+ this.getModel().getName() 			+ "\",";
+			if(this.getModel().getMake() != null){
+				ans = ans + "\"make\":\""+ this.getModel().getMake().getName() 	+ "\",";
+			}
+		}
+		ans = ans + "\"colour\":\"" 	+ this.getColour() 						+ "\",";
+		ans = ans + "\"year\":\"" 		+ this.getYear() 						+ "\",";
+		ans = ans + "\"engSizeCC\":\""	+ this.getEngSizeCC()					+ "\"";
+		
+		ans = ans + "}";
+		return ans;
+	}
+	
+	public static String toJSON(Collection<Vehicle> vehicles){
+		String ans = "{\"vehicles\":[";
+		for(Vehicle v: vehicles){
+			ans = ans + v.toJSON() + ",";
+		}
+		ans = ans.substring(0,ans.length()-1); // Removes last "," in the array. So you get [a,b,c] instead of [a,b,c,]
+		ans = ans + "]}";
+		return ans;
 	}
 
 	public long getId() {

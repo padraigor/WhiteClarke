@@ -3,8 +3,6 @@ package org.porourke.carshop.model.hibernate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.persistence.Cacheable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity(name = "Model")
@@ -24,9 +20,11 @@ public class Model {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id; // Unique Identifer
 
+	@JsonIgnore
 	@OneToMany 
 	private Collection<Vehicle> vehicles; // List of Vehicles with this
 	
+	@JsonIgnore
 	@ManyToOne @JoinColumn(name="make_id")
 	//@Column(name = "make_id")
 	private Make make; // Car make for this model
@@ -79,7 +77,6 @@ public class Model {
 			vehicles.add(vehicle);
 			vehicle.setModel(this);
 		}
-
 	}
 
 	public Make getMake() {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HibernateVehicleTest" project="carshop-model" tests="13" started="13" failures="0" errors="0" ignored="0">
+  <testsuite name="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.004">
+    <testcase name="testToJSONWhenMakeNull" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testAllParamertersButIdConstructor" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.001"/>
+    <testcase name="testToJSONWhenModelNull" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testAllParameterConstructor" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testNoParameterConstructor" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testGetAndSetYear" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testGetAndSetId" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testGetAndSetEngSizeCC" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.001"/>
+    <testcase name="testGetAndSetColour" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testToJSON_From_Collection" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.001"/>
+    <testcase name="testGetAndSetModel" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testGetAndSetReg" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.0"/>
+    <testcase name="testToJSON" classname="org.porourke.carshop.model.hibernate.HibernateVehicleTest" time="0.001"/>
+  </testsuite>
+</testrun>
